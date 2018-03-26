@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>redux-middleware · GitBook</title>
+        <title>Vue · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="../vue/vue-async-load.html" />
     
-    <link rel="prev" href="../Vue/" />
+    
+    <link rel="prev" href="../react/redux-middleware.html" />
     
 
     </head>
@@ -132,9 +134,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="../Vue/">
+        <li class="chapter active" data-level="1.3" data-path="./">
             
-                <a href="../Vue/">
+                <a href="./">
             
                     
                     Vue
@@ -146,9 +148,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.3.1" data-path="vue-async-load.html">
+        <li class="chapter " data-level="1.3.1" data-path="../vue/vue-async-load.html">
             
-                <a href="vue-async-load.html">
+                <a href="../vue/vue-async-load.html">
             
                     
                     redux-middleware
@@ -194,7 +196,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >redux-middleware</a>
+        <a href=".." >Vue</a>
     </h1>
 </div>
 
@@ -209,33 +211,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <pre><code class="lang-js"><span class="hljs-comment">//&#x5168;&#x5C40;&#x7EC4;&#x4EF6;</span>
-Vue.component(<span class="hljs-string">&apos;async-example&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">resolve, reject</span>) </span>{
-    axios.get(<span class="hljs-string">&apos;/xxx&apos;</span>).then(data =&gt; {
-     <span class="hljs-comment">//data&#x662F;&#x4E2A;&#x5BF9;&#x8C61; {template: `&lt;h1&gt;sgsgsg&lt;/h1&gt;`}</span>
-     resolve(data); 
-    })
- })
-
- <span class="hljs-comment">//&#x5C40;&#x90E8;&#x7EC4;&#x4EF6;</span>
- <span class="hljs-keyword">new</span> Vue({
-     ....,
-     components: {
-         xxx: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>)</span>{
-               axios.get(<span class="hljs-string">&apos;/xxx&apos;</span>).then(data =&gt; {
-            <span class="hljs-comment">//data&#x662F;&#x4E2A;&#x5BF9;&#x8C61; {template: `&lt;h1&gt;sgsgsg&lt;/h1&gt;`}</span>
-
-             resolve(data); <span class="hljs-comment">//resolve(Vue.extend(data)&#x4E5F;&#x53EF;&#x4EE5;</span>
-            })
-         }
-     }
- })
-
-
- <span class="hljs-comment">//&#x4F7F;&#x7528;webpack&#x5B9E;&#x73B0;&#x5F02;&#x6B65;&#x52A0;&#x8F7D;</span>
- <span class="hljs-keyword">const</span> xxx = () =&gt; <span class="hljs-keyword">import</span> (<span class="hljs-string">&apos;./xxx&apos;</span>)
- <span class="hljs-keyword">const</span> yyy = (resolve) =&gt; <span class="hljs-built_in">require</span>([<span class="hljs-string">&apos;./yyy&apos;</span>], resolve)
-</code></pre>
+                                <h2 id="vue&#x76F8;&#x5173;">vue&#x76F8;&#x5173;</h2>
 
                                 
                                 </section>
@@ -263,10 +239,14 @@ Vue.component(<span class="hljs-string">&apos;async-example&apos;</span>, <span 
 
             
                 
-                <a href="../Vue/" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Vue">
+                <a href="../react/redux-middleware.html" class="navigation navigation-prev " aria-label="Previous page: redux-middleware">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="../vue/vue-async-load.html" class="navigation navigation-next " aria-label="Next page: redux-middleware">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -275,7 +255,7 @@ Vue.component(<span class="hljs-string">&apos;async-example&apos;</span>, <span 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"redux-middleware","level":"1.3.1","depth":2,"previous":{"title":"Vue","level":"1.3","depth":1,"path":"Vue/README.md","ref":"Vue/README.md","articles":[{"title":"redux-middleware","level":"1.3.1","depth":2,"path":"vue/vue-async-load.md","ref":"vue/vue-async-load.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"vue/vue-async-load.md","mtime":"2018-03-26T11:07:54.842Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-26T11:20:25.628Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Vue","level":"1.3","depth":1,"next":{"title":"redux-middleware","level":"1.3.1","depth":2,"path":"vue/vue-async-load.md","ref":"vue/vue-async-load.md","articles":[]},"previous":{"title":"redux-middleware","level":"1.2.1","depth":2,"path":"react/redux-middleware.md","ref":"react/redux-middleware.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Vue/README.md","mtime":"2018-03-26T11:19:59.633Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-26T11:20:25.628Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
