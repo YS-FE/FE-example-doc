@@ -1,4 +1,5 @@
 
+```js
 /*
 封装的redux中的 applyMiddleware使用
 import {createStore, combineReducers, applyMiddleware} from 'redux';
@@ -66,3 +67,5 @@ let store = createStore(xxx, applyMiddleware(yyy, zzz));
  }
 
  applyMiddleware(store, [logger, thunk]);
+
+ ```

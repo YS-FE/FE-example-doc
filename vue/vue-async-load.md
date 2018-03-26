@@ -1,4 +1,5 @@
 
+```js
 //全局组件
 Vue.component('async-example', function (resolve, reject) {
     axios.get('/xxx').then(data => {
@@ -25,3 +26,4 @@ Vue.component('async-example', function (resolve, reject) {
  //使用webpack实现异步加载
  const xxx = () => import ('./xxx')
  const yyy = (resolve) => require(['./yyy'], resolve)
+ ```
