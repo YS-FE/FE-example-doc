@@ -28,7 +28,7 @@ Vue.component('async-example', function (resolve, reject) {
  ```
 
  
- ## 使用webpack实现异步加载
+ ## 使用 vue-router时 路由组件异步加载
 
  ```js
  const xxx = () => import ('./xxx')
