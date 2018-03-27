@@ -9,6 +9,9 @@
 4. gitbook  serve 本地查看
 5. git push origin master 
 
+##  一步到位
+* 直接运行脚本  `./publish.sh`
+
 ## 安装插件
 1. 修改 book.json文件
 2. gitbook install 安装
