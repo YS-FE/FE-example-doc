@@ -1,3 +1,7 @@
+# 组件异步加载
+
+
+## 注册组件
 
 ```js
 //全局组件
@@ -21,9 +25,12 @@ Vue.component('async-example', function (resolve, reject) {
          }
      }
  })
+ ```
 
  
- //使用webpack实现异步加载
+ ## 使用webpack实现异步加载
+
+ ```js
  const xxx = () => import ('./xxx')
  const yyy = (resolve) => require(['./yyy'], resolve)
  ```

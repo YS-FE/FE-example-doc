@@ -1,14 +1,19 @@
 
+## redux模块使用
+
 ```js
-/*
 封装的redux中的 applyMiddleware使用
 import {createStore, combineReducers, applyMiddleware} from 'redux';
 import yyy  from 'yyy'
 import zzz from 'zzz'
 
 let store = createStore(xxx, applyMiddleware(yyy, zzz));
-**/
+```
 
+
+## 手动实现
+
+```js
 
  /*
  手动实现 middleware

@@ -6,4 +6,4 @@
     * [redux-middleware](react/redux-middleware.md)
 
 * [Vue](Vue/README.md)
-    * [redux-middleware](vue/vue-async-load.md)
+    * [vue-async-load](vue/vue-async-load.md)
