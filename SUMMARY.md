@@ -8,4 +8,4 @@
     * [react服务端渲染](react/react-server.md)
 
 * [Vue](Vue/README.md)
-    * [vue-async-load](vue/vue-async-load.md)
+    * [vue组件异步加载](vue/vue-async-load.md)
