@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>vue组件异步加载 · GitBook</title>
+        <title>Debug · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../debug/" />
+    <link rel="next" href="mobile-debug.html" />
     
     
-    <link rel="prev" href="../Vue/" />
+    <link rel="prev" href="../vue/vue-async-load.html" />
     
 
     </head>
@@ -178,9 +178,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.3.1" data-path="vue-async-load.html">
+        <li class="chapter " data-level="1.3.1" data-path="../vue/vue-async-load.html">
             
-                <a href="vue-async-load.html">
+                <a href="../vue/vue-async-load.html">
             
                     
                     vue组件异步加载
@@ -203,9 +203,9 @@
         
         
     
-        <li class="chapter " data-level="2.1" data-path="../debug/">
+        <li class="chapter active" data-level="2.1" data-path="./">
             
-                <a href="../debug/">
+                <a href="./">
             
                     
                     Debug
@@ -217,9 +217,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.1.1" data-path="../debug/mobile-debug.html">
+        <li class="chapter " data-level="2.1.1" data-path="mobile-debug.html">
             
-                <a href="../debug/mobile-debug.html">
+                <a href="mobile-debug.html">
             
                     
                     移动端调试
@@ -265,7 +265,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >vue组件异步加载</a>
+        <a href=".." >Debug</a>
     </h1>
 </div>
 
@@ -280,34 +280,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x7EC4;&#x4EF6;&#x5F02;&#x6B65;&#x52A0;&#x8F7D;">&#x7EC4;&#x4EF6;&#x5F02;&#x6B65;&#x52A0;&#x8F7D;</h1>
-<h2 id="&#x6CE8;&#x518C;&#x7EC4;&#x4EF6;">&#x6CE8;&#x518C;&#x7EC4;&#x4EF6;</h2>
-<pre><code class="lang-js"><span class="hljs-comment">//&#x5168;&#x5C40;&#x7EC4;&#x4EF6;</span>
-Vue.component(<span class="hljs-string">&apos;async-example&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">resolve, reject</span>) </span>{
-    axios.get(<span class="hljs-string">&apos;/xxx&apos;</span>).then(data =&gt; {
-     <span class="hljs-comment">//data&#x662F;&#x4E2A;&#x5BF9;&#x8C61; {template: `&lt;h1&gt;sgsgsg&lt;/h1&gt;`}</span>
-     resolve(data); 
-    })
- })
-
- <span class="hljs-comment">//&#x5C40;&#x90E8;&#x7EC4;&#x4EF6;</span>
- <span class="hljs-keyword">new</span> Vue({
-     ....,
-     components: {
-         xxx: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>)</span>{
-               axios.get(<span class="hljs-string">&apos;/xxx&apos;</span>).then(data =&gt; {
-            <span class="hljs-comment">//data&#x662F;&#x4E2A;&#x5BF9;&#x8C61; {template: `&lt;h1&gt;sgsgsg&lt;/h1&gt;`}</span>
-
-             resolve(data); <span class="hljs-comment">//resolve(Vue.extend(data)&#x4E5F;&#x53EF;&#x4EE5;</span>
-            })
-         }
-     }
- })
-</code></pre>
-<h2 id="&#x4F7F;&#x7528;-vue-router&#x65F6;-&#x8DEF;&#x7531;&#x7EC4;&#x4EF6;&#x5F02;&#x6B65;&#x52A0;&#x8F7D;">&#x4F7F;&#x7528; vue-router&#x65F6; &#x8DEF;&#x7531;&#x7EC4;&#x4EF6;&#x5F02;&#x6B65;&#x52A0;&#x8F7D;</h2>
-<pre><code class="lang-js"> <span class="hljs-keyword">const</span> xxx = () =&gt; <span class="hljs-keyword">import</span> (<span class="hljs-string">&apos;./xxx&apos;</span>)
- <span class="hljs-keyword">const</span> yyy = (resolve) =&gt; <span class="hljs-built_in">require</span>([<span class="hljs-string">&apos;./yyy&apos;</span>], resolve)
-</code></pre>
+                                <h2 id="&#x8C03;&#x8BD5;">&#x8C03;&#x8BD5;</h2>
 
                                 
                                 </section>
@@ -335,12 +308,12 @@ Vue.component(<span class="hljs-string">&apos;async-example&apos;</span>, <span 
 
             
                 
-                <a href="../Vue/" class="navigation navigation-prev " aria-label="Previous page: Vue">
+                <a href="../vue/vue-async-load.html" class="navigation navigation-prev " aria-label="Previous page: vue组件异步加载">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../debug/" class="navigation navigation-next " aria-label="Next page: Debug">
+                <a href="mobile-debug.html" class="navigation navigation-next " aria-label="Next page: 移动端调试">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -351,7 +324,7 @@ Vue.component(<span class="hljs-string">&apos;async-example&apos;</span>, <span 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"vue组件异步加载","level":"1.3.1","depth":2,"next":{"title":"Debug","level":"2.1","depth":1,"path":"debug/README.md","ref":"debug/README.md","articles":[{"title":"移动端调试","level":"2.1.1","depth":2,"path":"debug/mobile-debug.md","ref":"debug/mobile-debug.md","articles":[]}]},"previous":{"title":"Vue","level":"1.3","depth":1,"path":"Vue/README.md","ref":"Vue/README.md","articles":[{"title":"vue组件异步加载","level":"1.3.1","depth":2,"path":"vue/vue-async-load.md","ref":"vue/vue-async-load.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["multipart"],"pluginsConfig":{"multipart":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"vue/vue-async-load.md","mtime":"2018-03-27T02:15:03.629Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-29T02:13:01.573Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Debug","level":"2.1","depth":1,"next":{"title":"移动端调试","level":"2.1.1","depth":2,"path":"debug/mobile-debug.md","ref":"debug/mobile-debug.md","articles":[]},"previous":{"title":"vue组件异步加载","level":"1.3.1","depth":2,"path":"vue/vue-async-load.md","ref":"vue/vue-async-load.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["multipart"],"pluginsConfig":{"multipart":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"debug/README.md","mtime":"2018-03-29T01:44:12.557Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-29T02:13:01.573Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
