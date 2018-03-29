@@ -10,7 +10,7 @@
 5. git push origin master 
 
 ##  一步到位
-* 直接运行脚本(需要可执行权限)  `./publish.sh`
+* 直接运行脚本(需要可执行权限)  `bash ./publish.sh`
 
 ## 安装插件
 1. 修改 book.json文件
