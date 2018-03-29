@@ -14,8 +14,8 @@
 
 #### 如下
 
-```js
 
+```js
  <script>
     window.onerror = function (message, source, lineno, colno, error) {
         console.log("%c----------error----------", "color:red;font-size:30px");
@@ -27,18 +27,17 @@
         console.log("%c----------error----------", "color:red;font-size:30px");
     }
  </script>
- <script type="text/javascript" src="http://10.252.54.118:3000/m-console.js"></script>
-
+ <script  src="http://10.252.54.118:3000/m-console.js"></script>
 ```
 
 
 ## v-console工具
-v-console工具方便将调试信息直接在手机上输出(log,storage,network等),但是有语法错误或者不支持信誉发时时就无效了。
+v-console工具方便将调试信息直接在手机上输出(log,storage,network等),但是有语法错误或者不支持时就无效了。
 
 ### 操作
 * 安装 `npm i vconsole`
 * HTML 代码中引入 vconsole.min.js
-* new VConsole()
+* new VConsole() 初始化vconsole
 * 手机浏览器打开页面即可查看
 
 #### 如下
