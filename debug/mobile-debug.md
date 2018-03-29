@@ -15,18 +15,20 @@
 #### 如下
 
 ```js
-    <script>
-        window.onerror = function (message, source, lineno, colno, error) {
-            console.log("%c----------error----------", "color:red;font-size:30px");
-            console.log(message);
-            console.log(source);
-            console.log(lineno);
-            console.log(colno);
-            console.log(error);
-            console.log("%c----------error----------", "color:red;font-size:30px");
-        }
-    </script>
-    <script type="text/javascript" src="http://10.252.54.118:3000/m-console.js"></script>
+
+ <script>
+    window.onerror = function (message, source, lineno, colno, error) {
+        console.log("%c----------error----------", "color:red;font-size:30px");
+        console.log(message);
+        console.log(source);
+        console.log(lineno);
+        console.log(colno);
+        console.log(error);
+        console.log("%c----------error----------", "color:red;font-size:30px");
+    }
+ </script>
+ <script type="text/javascript" src="http://10.252.54.118:3000/m-console.js"></script>
+
 ```
 
 
