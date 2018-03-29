@@ -13,6 +13,7 @@
 * 代理可以使用charles等工具
 
 #### 如下
+
 ```js
     <script>
         window.onerror = function (message, source, lineno, colno, error) {
@@ -49,7 +50,7 @@ v-console工具方便将调试信息直接在手机上输出(log,storage,network
     </script>
 ```
 
-## <span style="color:red;">根据不同需求选择不同的工具即可</span>
+## <span style="color:red;">注意: 根据不同需求选择不同的工具即可</span>
 
 
 
