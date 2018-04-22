@@ -136,7 +136,7 @@ body {
 * 语法支持
 
 ```css
-@screen (padding-bottom: constant(safe-area-inset-bottom)) or   (padding-bottom: env(safe-area-inset-bottom)){
+@supports (padding-bottom: constant(safe-area-inset-bottom)) or   (padding-bottom: env(safe-area-inset-bottom)){
     ...
 }
 ```
