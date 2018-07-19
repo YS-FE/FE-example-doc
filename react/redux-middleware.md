@@ -29,7 +29,7 @@ let store = createStore(xxx, applyMiddleware(yyy, zzz));
  const logger = store => next => action => {
      let ret = next(action);
      console.log(store.getState());
-     return let;
+     return ret;
  }
 
  /*
@@ -39,7 +39,7 @@ let store = createStore(xxx, applyMiddleware(yyy, zzz));
          return function (action) {
              let ret = next(action);
              console.log(store.getState());
-             return let;
+             return ret;
          }
      }
  }
