@@ -56,21 +56,24 @@ let store = createStore(xxx, applyMiddleware(yyy, zzz));
 
 
  /**
-  * 模拟中间件的引入 
-  * @param {*} store 
-  * @param {*} midddlewares 
-  */
- function applyMiddleware(store, midddlewares){
-     midddlewares.slice().reverse();
-     let dispatch = store.dispatch;
+ * 中间件添加
+ * @param {Array} midddlewares 
+ */
+function applyMiddleware(...midddlewares){
 
-     midddlewares.forEach(middleware => {
-         dispatch = middleware(store)(dispatch);
-     });
+  return createStore => (...arg) => {
+    const store = createStore(...arg);
 
-     Object.assign({},store, {dispatch});
- }
+    midddlewares.reverse();
 
- applyMiddleware(store, [logger, thunk]);
+    let dispatch = store.dispatch;
 
- ```
+    midddlewares.forEach(middleware => {
+      dispatch = middleware(store)(dispatch);
+    });
+
+    return {...store, dispatch};
+  }
+}
+
+```
