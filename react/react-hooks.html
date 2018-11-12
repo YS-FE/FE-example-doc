@@ -1,0 +1,547 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>react Hooks · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-multipart/multipart.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../Vue/" />
+    
+    
+    <link rel="prev" href="react-router.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../React/README.md">
+            
+                <span>
+            
+                    
+                    React
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="redux-middleware.html">
+            
+                <a href="redux-middleware.html">
+            
+                    
+                    redux中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="react-component.html">
+            
+                <a href="react-component.html">
+            
+                    
+                    react组件动态加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="react-server.html">
+            
+                <a href="react-server.html">
+            
+                    
+                    react服务端渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="react-router.html">
+            
+                <a href="react-router.html">
+            
+                    
+                    react-router相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.5" data-path="react-hooks.html">
+            
+                <a href="react-hooks.html">
+            
+                    
+                    react Hooks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Vue/">
+            
+                <a href="../Vue/">
+            
+                    
+                    Vue
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../vue/vue-async-load.html">
+            
+                <a href="../vue/vue-async-load.html">
+            
+                    
+                    vue组件异步加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../vue/vue-prop.html">
+            
+                <a href="../vue/vue-prop.html">
+            
+                    
+                    vue prop双向通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../CSS/">
+            
+                <a href="../CSS/">
+            
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../CSS/css-01.html">
+            
+                <a href="../CSS/css-01.html">
+            
+                    
+                    新特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../debug/">
+            
+                <a href="../debug/">
+            
+                    
+                    Debug
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../debug/mobile-debug.html">
+            
+                <a href="../debug/mobile-debug.html">
+            
+                    
+                    移动端调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >react Hooks</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="react--167alpha0--hooks">react &gt;= 16.7.alpha.0  Hooks</h2>
+<h2 id="&#x793A;&#x4F8B;-1-usestate-usereducer-useref-useeffect">&#x793A;&#x4F8B;-1 (useState, useReducer, useRef, useEffect)</h2>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React, {useState, useEffect, useRef, useReducer} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+
+
+<span class="hljs-comment">// &#x7C7B;&#x4F3C;&#x4E8E;redux &#x7684; reducer &#x7528;&#x4E8E;&#x7BA1;&#x7406;&#x6BD4;&#x8F83;&#x590D;&#x6742;&#x7684;&#x5185;&#x90E8;&#x72B6;&#x6001;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">reducer</span> (<span class="hljs-params">state = [], action</span>) </span>{
+  <span class="hljs-keyword">switch</span> (action.type) {
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;add&apos;</span>:
+      <span class="hljs-keyword">return</span> [...state, {name: <span class="hljs-string">&apos;lisi&apos;</span>, age: <span class="hljs-number">10</span>}];
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;del&apos;</span>:
+      state.pop() ;
+      <span class="hljs-keyword">return</span> state;
+    <span class="hljs-keyword">default</span>: 
+      <span class="hljs-keyword">return</span> state;
+  }
+}
+
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Hook</span>(<span class="hljs-params">props</span>) </span>{
+  <span class="hljs-keyword">const</span> [count, setCount] = useState(<span class="hljs-number">0</span>);
+
+  <span class="hljs-comment">//&#x72B6;&#x6001;&#x8F83;&#x591A;&#x4E14;&#x6BD4;&#x8F83;&#x590D;&#x6742;&#x65F6; &#xFF0C;&#x63A8;&#x8350;&#x4F7F;&#x7528; useReducer</span>
+  <span class="hljs-keyword">const</span> [users, dispatch] = useReducer(reducer, []);
+
+  <span class="hljs-comment">// &#x66F4;&#x52A0;&#x65B9;&#x4FBF;&#x7684; ref &#x83B7;&#x53D6;dom</span>
+  <span class="hljs-keyword">const</span> inc = useRef();
+  <span class="hljs-keyword">const</span> dec = useRef();
+
+  <span class="hljs-keyword">const</span> increment = () =&gt; {
+    <span class="hljs-comment">//&#x72B6;&#x6001;&#x7684;&#x4FEE;&#x6539;&#x662F;&#x76F4;&#x63A5;&#x8986;&#x76D6;&#xFF0C;&#x4E0D;&#x4F1A;&#x8FDB;&#x884C;&#x6D45;&#x5408;&#x5E76;</span>
+    setCount(count + <span class="hljs-number">1</span>);
+  };
+
+  <span class="hljs-keyword">const</span> decrement = () =&gt; {
+    setCount(count - <span class="hljs-number">1</span>);
+  };
+
+
+  <span class="hljs-comment">// componentDidUpdate  compoentDidMount  componentWillUnMount&#x6267;&#x884C;</span>
+  <span class="hljs-comment">// &#x6267;&#x884C;&#x662F;&#x5F02;&#x6B65;&#x7684;</span>
+  useEffect(() =&gt; {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;document.title&apos;</span>, <span class="hljs-built_in">document</span>.title);
+    <span class="hljs-built_in">console</span>.log(inc.current, dec.current);
+  });
+
+  <span class="hljs-comment">// &#x7B49;&#x4EF7;&#x4E8E; useEffect  &#x4F46;&#x662F; &#x540C;&#x6B65;&#x6267;&#x884C;</span>
+  useLayoutEffect(() =&gt; {
+    inc.current.click();
+  });
+
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>count: {count}<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">{inc}</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{increment}</span>&gt;</span>&#x589E;&#x52A0;<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">{dec}</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{decrement}</span>&gt;</span>&#x51CF;&#x5C0F;<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+
+
+      // &#x901A;&#x8FC7;dispatch &#x66F4;&#x65B0;&#x72B6;&#x6001;
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> dispatch({type: &apos;add&apos;})}&gt;&#x6DFB;&#x52A0;<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> dispatch({type: &apos;del&apos;})}&gt;&#x79FB;&#x9664;<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+
+      <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+        {
+          users.map((item, index) =&gt; {
+            return (
+              <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">key</span>=<span class="hljs-string">{index}</span>&gt;</span>{item.name}<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            )
+          })
+        }
+      <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+  )
+}
+</code></pre>
+<h2 id="&#x793A;&#x4F8B;-2usecontext">&#x793A;&#x4F8B;-2(useContext)</h2>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React, {useState, useContext} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;./Hook2.css&apos;</span>;
+
+
+<span class="hljs-comment">// &#x521B;&#x5EFA;Context</span>
+<span class="hljs-keyword">const</span> TestContext = React.createContext({
+  background: <span class="hljs-string">&apos;green&apos;</span>
+});
+
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">InnerComponent</span>(<span class="hljs-params">props</span>) </span>{
+  <span class="hljs-comment">// &#x5C06;context&#x6DFB;&#x52A0;&#x5230;&#x5F53;&#x524D;&#x7EC4;&#x4EF6;&#x4E2D;,&#x5E76;&#x4E14; &#x6700;&#x8FD1;&#x7684;&#x7956;&#x5148;&#x7684;Provider&#x503C;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x4F1A;&#x91CD;&#x65B0;&#x6E32;&#x67D3;</span>
+  <span class="hljs-keyword">const</span> context = useContext(TestContext);
+
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{background:</span> <span class="hljs-attr">context.background</span>}}&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>useContext&#x6D4B;&#x8BD5;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+  )
+}
+
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Hook2</span>(<span class="hljs-params">props</span>) </span>{
+  <span class="hljs-keyword">const</span> [color, setColor] = useState(<span class="hljs-string">&apos;green&apos;</span>);
+
+  <span class="hljs-keyword">const</span> changeColor = () =&gt; {
+    <span class="hljs-keyword">if</span> (color === <span class="hljs-string">&apos;green&apos;</span>) {
+      setColor(<span class="hljs-string">&apos;yellow&apos;</span>);
+    } <span class="hljs-keyword">else</span> {
+      setColor(<span class="hljs-string">&apos;green&apos;</span>);
+    }
+  };
+
+  <span class="hljs-keyword">return</span> (
+    &lt;div className=&quot;hook2&quot;&gt;
+
+      // context &#x7684;Provider&#x503C;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;, InnerComponent&#x8981;&#x91CD;&#x65B0;&#x6E32;&#x67D3;
+      &lt;TestContext.Provider value={{background: color}}&gt;
+        &lt;button onClick={() =&gt; changeColor()}&gt;&#x6539;&#x53D8;&#x80CC;&#x666F;&#x8272;&lt;/button&gt;
+        &lt;InnerComponent/&gt;
+      &lt;/TestContext.Provider&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="react-router.html" class="navigation navigation-prev " aria-label="Previous page: react-router相关">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../Vue/" class="navigation navigation-next " aria-label="Next page: Vue">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"react Hooks","level":"1.2.5","depth":2,"next":{"title":"Vue","level":"1.3","depth":1,"path":"Vue/README.md","ref":"Vue/README.md","articles":[{"title":"vue组件异步加载","level":"1.3.1","depth":2,"path":"vue/vue-async-load.md","ref":"vue/vue-async-load.md","articles":[]},{"title":"vue prop双向通信","level":"1.3.2","depth":2,"path":"vue/vue-prop.md","ref":"vue/vue-prop.md","articles":[]}]},"previous":{"title":"react-router相关","level":"1.2.4","depth":2,"path":"react/react-router.md","ref":"react/react-router.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["multipart"],"pluginsConfig":{"multipart":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"react/react-hooks.md","mtime":"2018-11-12T07:19:17.049Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-12T07:19:41.025Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
