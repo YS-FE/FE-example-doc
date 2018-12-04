@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>redux中间件 · GitBook</title>
+        <title>Node · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="react-component.html" />
+    <link rel="next" href="event-loop.html" />
     
     
-    <link rel="prev" href="../React/README.md" />
+    <link rel="prev" href="../debug/mobile-debug.html" />
     
 
     </head>
@@ -120,9 +120,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.2.1" data-path="redux-middleware.html">
+        <li class="chapter " data-level="1.2.1" data-path="../react/redux-middleware.html">
             
-                <a href="redux-middleware.html">
+                <a href="../react/redux-middleware.html">
             
                     
                     redux中间件
@@ -133,9 +133,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="react-component.html">
+        <li class="chapter " data-level="1.2.2" data-path="../react/react-component.html">
             
-                <a href="react-component.html">
+                <a href="../react/react-component.html">
             
                     
                     react组件动态加载
@@ -146,9 +146,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="react-server.html">
+        <li class="chapter " data-level="1.2.3" data-path="../react/react-server.html">
             
-                <a href="react-server.html">
+                <a href="../react/react-server.html">
             
                     
                     react服务端渲染
@@ -159,9 +159,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="react-router.html">
+        <li class="chapter " data-level="1.2.4" data-path="../react/react-router.html">
             
-                <a href="react-router.html">
+                <a href="../react/react-router.html">
             
                     
                     react-router相关
@@ -172,9 +172,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5" data-path="react-hooks.html">
+        <li class="chapter " data-level="1.2.5" data-path="../react/react-hooks.html">
             
-                <a href="react-hooks.html">
+                <a href="../react/react-hooks.html">
             
                     
                     react Hooks
@@ -299,9 +299,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="../node/">
+        <li class="chapter active" data-level="1.6" data-path="./">
             
-                <a href="../node/">
+                <a href="./">
             
                     
                     Node
@@ -313,9 +313,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="../node/event-loop.html">
+        <li class="chapter " data-level="1.6.1" data-path="event-loop.html">
             
-                <a href="../node/event-loop.html">
+                <a href="event-loop.html">
             
                     
                     事件循环
@@ -361,7 +361,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >redux中间件</a>
+        <a href=".." >Node</a>
     </h1>
 </div>
 
@@ -376,77 +376,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="redux&#x6A21;&#x5757;&#x4F7F;&#x7528;">redux&#x6A21;&#x5757;&#x4F7F;&#x7528;</h2>
-<pre><code class="lang-js">&#x5C01;&#x88C5;&#x7684;redux&#x4E2D;&#x7684; applyMiddleware&#x4F7F;&#x7528;
-<span class="hljs-keyword">import</span> {createStore, combineReducers, applyMiddleware} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux&apos;</span>;
-<span class="hljs-keyword">import</span> yyy  <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;yyy&apos;</span>
-<span class="hljs-keyword">import</span> zzz <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;zzz&apos;</span>
-
-<span class="hljs-keyword">let</span> store = createStore(xxx, applyMiddleware(yyy, zzz));
-</code></pre>
-<h2 id="&#x624B;&#x52A8;&#x5B9E;&#x73B0;">&#x624B;&#x52A8;&#x5B9E;&#x73B0;</h2>
-<pre><code class="lang-js">
- <span class="hljs-comment">/*
- &#x624B;&#x52A8;&#x5B9E;&#x73B0; middleware
- middleware: &#x4ECB;&#x4E8E; action &#x548C; reducer&#x4E4B;&#x95F4;&#x7684;&#x64CD;&#x4F5C;
- &#x5E76;&#x5C01;&#x88C5; applyMiddleware&#x65B9;&#x6CD5;&#xFF0C;&#x5F15;&#x5165;&#x4E2D;&#x95F4;&#x4EF6;
- **/</span>
-<span class="hljs-comment">/**
- * 
- * @param {Object} store 
- * @param {Function} next &#x5F53;&#x524D;&#x7684;store.dispatch
- * @param {Object} action &#x4F20;&#x9012;&#x7ED9;dispatch&#x7684;action
- */</span>
- <span class="hljs-keyword">const</span> logger = store =&gt; next =&gt; action =&gt; {
-     <span class="hljs-keyword">let</span> ret = next(action);
-     <span class="hljs-built_in">console</span>.log(store.getState());
-     <span class="hljs-keyword">return</span> ret;
- }
-
- <span class="hljs-comment">/*
- //ES5&#x65B9;&#x5F0F;
- const logger = function(store){
-     return function (next) {
-         return function (action) {
-             let ret = next(action);
-             console.log(store.getState());
-             return ret;
-         }
-     }
- }
- */</span>
-
-
- <span class="hljs-comment">/**
-  * 
-  * &#x6A21;&#x62DF;redux-thunk&#x4E2D;&#x95F4;&#x4EF6;
-  */</span>
- <span class="hljs-keyword">const</span> thunk = store =&gt; next =&gt; action =&gt; {
-     <span class="hljs-keyword">return</span>  <span class="hljs-keyword">typeof</span> action == <span class="hljs-string">&apos;function&apos;</span> ? action(store.dispatch, store.getState())  : next(action);
- }
-
-
- <span class="hljs-comment">/**
- * &#x4E2D;&#x95F4;&#x4EF6;&#x6DFB;&#x52A0;
- * @param {Array} midddlewares 
- */</span>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">applyMiddleware</span>(<span class="hljs-params">...midddlewares</span>)</span>{
-
-  <span class="hljs-keyword">return</span> createStore =&gt; (...arg) =&gt; {
-    <span class="hljs-keyword">const</span> store = createStore(...arg);
-
-    midddlewares.reverse();
-
-    <span class="hljs-keyword">let</span> dispatch = store.dispatch;
-
-    midddlewares.forEach(middleware =&gt; {
-      dispatch = middleware(store)(dispatch);
-    });
-
-    <span class="hljs-keyword">return</span> {...store, dispatch};
-  }
-}
-</code></pre>
+                                <h1 id="node">node</h1>
 
                                 
                                 </section>
@@ -474,12 +404,12 @@
 
             
                 
-                <a href="../React/README.md" class="navigation navigation-prev " aria-label="Previous page: React">
+                <a href="../debug/mobile-debug.html" class="navigation navigation-prev " aria-label="Previous page: 移动端调试">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="react-component.html" class="navigation navigation-next " aria-label="Next page: react组件动态加载">
+                <a href="event-loop.html" class="navigation navigation-next " aria-label="Next page: 事件循环">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -490,7 +420,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"redux中间件","level":"1.2.1","depth":2,"next":{"title":"react组件动态加载","level":"1.2.2","depth":2,"path":"react/react-component.md","ref":"react/react-component.md","articles":[]},"previous":{"title":"React","level":"1.2","depth":1,"path":"React/README.md","ref":"React/README.md","articles":[{"title":"redux中间件","level":"1.2.1","depth":2,"path":"react/redux-middleware.md","ref":"react/redux-middleware.md","articles":[]},{"title":"react组件动态加载","level":"1.2.2","depth":2,"path":"react/react-component.md","ref":"react/react-component.md","articles":[]},{"title":"react服务端渲染","level":"1.2.3","depth":2,"path":"react/react-server.md","ref":"react/react-server.md","articles":[]},{"title":"react-router相关","level":"1.2.4","depth":2,"path":"react/react-router.md","ref":"react/react-router.md","articles":[]},{"title":"react Hooks","level":"1.2.5","depth":2,"path":"react/react-hooks.md","ref":"react/react-hooks.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["multipart"],"pluginsConfig":{"multipart":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"react/redux-middleware.md","mtime":"2018-07-19T09:59:03.725Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-04T02:34:26.703Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Node","level":"1.6","depth":1,"next":{"title":"事件循环","level":"1.6.1","depth":2,"path":"node/event-loop.md","ref":"node/event-loop.md","articles":[]},"previous":{"title":"移动端调试","level":"1.5.1","depth":2,"path":"debug/mobile-debug.md","ref":"debug/mobile-debug.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["multipart"],"pluginsConfig":{"multipart":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node/README.md","mtime":"2018-12-04T02:31:48.917Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-04T02:34:26.703Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
