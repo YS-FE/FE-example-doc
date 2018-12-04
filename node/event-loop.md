@@ -1,6 +1,9 @@
 ## event-loop 事件循环原理
 
 
+![event-loop](./imgs/loop.png)
+
+
 ```
 node 的初始化
 
