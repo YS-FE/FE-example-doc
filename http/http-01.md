@@ -198,3 +198,32 @@ http.createServer(function (request, response) {
 );
 
 ```
+
+
+
+## redirect 重定向
+
+```js
+
+//server.js
+
+const http = require('http')
+
+http.createServer(function (request, response) {
+
+  if (request.url === '/') {
+    response.writeHead(302, {  // or 301
+      'Location': '/new'
+    })
+    response.end()
+  }
+
+  if (request.url === '/new') {
+    response.writeHead(200, {
+      'Content-Type': 'text/html',
+    })
+    response.end('<div>this is content</div>')
+  }
+}).listen(8888);
+
+```
