@@ -27,6 +27,37 @@ var 获取css变量值, 定义时需要遵照命名规范
         }
 ```
 
+
+
+
+## css 镂空效果
+
+![](./imgs/loukong.png)
+
+```html
+  <style>
+    .crop-area {
+      position: absolute;
+      top: 20px;
+      left: 120px;
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(to top, transparent, transparent);
+      outline: 300px solid rgba(0, 0, 0, 0.5); /*使用 outline实现滴..*/
+    }
+  </style>
+
+
+  <div class="crop">
+    <img src="./img/6.webp" alt="">
+    <div class="crop-area"></div>
+  </div>
+```
+
+
+
+
+
 ## iphonex 适配问题
 * [webkit官网文档](https://webkit.org/blog/7929/designing-websites-for-iphone-x/?hmsr=funteas.com&utm_medium=funteas.com&utm_source=funteas.com)
 

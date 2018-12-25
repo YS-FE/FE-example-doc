@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>水印 · GitBook</title>
+        <title>video · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="video.html" />
+    <link rel="next" href="../css/" />
     
     
-    <link rel="prev" href="cursor.html" />
+    <link rel="prev" href="watermark.html" />
     
 
     </head>
@@ -288,7 +288,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5.3" data-path="watermark.html">
+        <li class="chapter " data-level="1.5.3" data-path="watermark.html">
             
                 <a href="watermark.html">
             
@@ -301,7 +301,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="video.html">
+        <li class="chapter active" data-level="1.5.4" data-path="video.html">
             
                 <a href="video.html">
             
@@ -458,7 +458,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >水印</a>
+        <a href=".." >video</a>
     </h1>
 </div>
 
@@ -473,41 +473,113 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x6C34;&#x5370;">&#x6C34;&#x5370;</h1>
-<h2 id="canvas-&#x7ED8;&#x5236;">canvas &#x7ED8;&#x5236;</h2>
-<pre><code class="lang-js">
-    <span class="hljs-comment">//canvas &#x7ED8;&#x5236;&#x6C34;&#x5370;</span>
-    <span class="hljs-keyword">const</span> canvas = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;canvas&apos;</span>);
-    canvas.setAttribute(<span class="hljs-string">&apos;width&apos;</span>, <span class="hljs-number">100</span>);
-    canvas.setAttribute(<span class="hljs-string">&apos;height&apos;</span>, <span class="hljs-number">100</span>);
-    canvas.setAttribute(<span class="hljs-string">&apos;opacity&apos;</span>, <span class="hljs-number">0.5</span>);
-    <span class="hljs-keyword">const</span> ctx = canvas.getContext(<span class="hljs-string">&apos;2d&apos;</span>);
+                                <h1 id="video">video</h1>
+<h2 id="video-&#x89C6;&#x9891;&#x6D41;-&#x62CD;&#x7167;&#x5E76;&#x5904;&#x7406;&#x56FE;&#x7247;">video &#x89C6;&#x9891;&#x6D41;, &#x62CD;&#x7167;&#x5E76;&#x5904;&#x7406;&#x56FE;&#x7247;</h2>
+<pre><code class="lang-html">
+<span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
 
-    ctx.fillStyle = <span class="hljs-string">&quot;red&quot;</span>;
-    ctx.rotate(<span class="hljs-built_in">Math</span>.PI / <span class="hljs-number">180</span> * <span class="hljs-number">20</span>);
-    ctx.fillText(<span class="hljs-string">&quot;OH MY COG&quot;</span>, <span class="hljs-number">80</span>, <span class="hljs-number">10</span>);
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>&#x83B7;&#x5F97;&#x89C6;&#x9891;&#x6D41;&#xFF0C;&#x62CD;&#x7167;<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">media</span>=<span class="hljs-string">&quot;screen&quot;</span>&gt;</span><span class="css">
+  <span class="hljs-selector-id">#show</span> <span class="hljs-selector-tag">img</span> {
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">180px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">90px</span>;
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">4px</span>;
+    <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">5px</span>;
+  }
 
-    <span class="hljs-comment">//&#x5BFC;&#x51FA;url</span>
-    <span class="hljs-keyword">var</span> base64Url = canvas.toDataURL();
+  <span class="hljs-selector-class">.operation</span> {
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">20px</span>;
+  }
+  <span class="hljs-selector-class">.operation</span> <span class="hljs-selector-tag">button</span> {
+    <span class="hljs-attribute">border</span>: none;
+    <span class="hljs-attribute">outline</span>: none;
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">4px</span>;
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;
+    <span class="hljs-attribute">background</span>: <span class="hljs-number">#409EFF</span>;
+    <span class="hljs-attribute">border-color</span>: <span class="hljs-number">409</span>EFF;
+  }
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
 
-    <span class="hljs-comment">//&#x5E94;&#x7528;&#x5230;&#x5143;&#x7D20;</span>
-    <span class="hljs-keyword">const</span> watermarkDiv = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;div&apos;</span>);
-    watermarkDiv.setAttribute(<span class="hljs-string">&apos;style&apos;</span>,
-        <span class="hljs-string">`
-        position:absolute;
-        top:0;
-        left:0;
-        width:100%;
-        height: 100%;
-        z-index:1000;
-        pointer-events:none;
-        background-repeat:repeat;
-        background-image:url(&apos;<span class="hljs-subst">${base64Url}</span>&apos;)
-        `</span>
-    );
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
 
-    <span class="hljs-comment">//&#x6DFB;&#x52A0;&#x5230;&#x9875;&#x9762;&#x5373;&#x53EF;</span>
-    <span class="hljs-built_in">document</span>.body.appendChild(watermarkDiv)
+  <span class="hljs-tag">&lt;<span class="hljs-name">video</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;video&quot;</span> <span class="hljs-attr">autoplay</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width:480px;height:320px;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;canvas&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display:none;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
+
+ <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;operation&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;capture(event)&quot;</span>&gt;</span>&#x5F00;&#x59CB;&#x6355;&#x83B7;<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+ <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+ <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;show&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript">
+
+    <span class="hljs-keyword">var</span> video = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&apos;#video&apos;</span>);
+    <span class="hljs-keyword">var</span> show = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&apos;#show&apos;</span>)
+    <span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&apos;#canvas&apos;</span>);
+    canvas.width = <span class="hljs-number">480</span>;
+    canvas.height = <span class="hljs-number">320</span>;
+    <span class="hljs-keyword">var</span> cxt = canvas.getContext(<span class="hljs-string">&apos;2d&apos;</span>);
+
+
+    <span class="hljs-comment">//&#x5F00;&#x542F;&#x89C6;&#x9891;&#x8BBE;&#x5907;</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testVideo</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-keyword">var</span> p = navigator.mediaDevices.getUserMedia({
+        audio: <span class="hljs-literal">true</span>,
+        video: { width: <span class="hljs-number">1280</span>, height: <span class="hljs-number">720</span> }
+        });
+
+        p.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">mediaStream</span>) </span>{
+        <span class="hljs-comment">// video.src = window.URL.createObjectURL(mediaStream);</span>
+        video.srcObject = mediaStream;
+        video.onloadedmetadata = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+            <span class="hljs-built_in">console</span>.log(video.duration);
+        };
+        });
+
+        p.catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(err.name);
+        });
+    }
+
+
+    <span class="hljs-comment">// &#x62CD;&#x7167;</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">capture</span>(<span class="hljs-params">event</span>)</span>{
+        <span class="hljs-comment">//&#x7ED8;&#x5236;&#x56FE;&#x7247;</span>
+        cxt.drawImage(video,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">480</span>,<span class="hljs-number">320</span>);
+
+        <span class="hljs-comment">/// &#x8F6C;&#x4E3A;&#x9ED1;&#x767D;</span>
+        <span class="hljs-keyword">let</span> length = canvas.width * canvas.height;
+        imageData = cxt.getImageData(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, canvas.width, canvas.height);
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; length * <span class="hljs-number">4</span>; i += <span class="hljs-number">4</span>) {
+            <span class="hljs-keyword">let</span> myRed = imageData.data[i];
+            <span class="hljs-keyword">let</span> myGreen = imageData.data[i + <span class="hljs-number">1</span>];
+            <span class="hljs-keyword">let</span> myBlue = imageData.data[i + <span class="hljs-number">2</span>];
+            myGray = <span class="hljs-built_in">parseInt</span>((myRed + myGreen + myBlue) / <span class="hljs-number">3</span>);
+            imageData.data[i] = myGray;
+            imageData.data[i + <span class="hljs-number">1</span>] = myGray;
+            imageData.data[i + <span class="hljs-number">2</span>] = myGray;
+        }
+
+        cxt.putImageData(imageData, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+
+
+        <span class="hljs-comment">//&#x8F93;&#x51FA;&#x56FE;&#x7247;</span>
+        <span class="hljs-keyword">let</span> src = canvas.toDataURL(<span class="hljs-string">&apos;image/jpeg&apos;</span>, <span class="hljs-number">1.0</span>);
+        <span class="hljs-keyword">let</span> img  = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;img&apos;</span>);
+        img.src = src;
+        show.appendChild(img);
+    }
+
+
+   testVideo();
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre>
 
                                 
@@ -536,12 +608,12 @@
 
             
                 
-                <a href="cursor.html" class="navigation navigation-prev " aria-label="Previous page: 光标">
+                <a href="watermark.html" class="navigation navigation-prev " aria-label="Previous page: 水印">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="video.html" class="navigation navigation-next " aria-label="Next page: video">
+                <a href="../css/" class="navigation navigation-next " aria-label="Next page: CSS">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -552,7 +624,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"水印","level":"1.5.3","depth":2,"next":{"title":"video","level":"1.5.4","depth":2,"path":"base/video.md","ref":"base/video.md","articles":[]},"previous":{"title":"光标","level":"1.5.2","depth":2,"path":"base/cursor.md","ref":"base/cursor.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["multipart"],"pluginsConfig":{"multipart":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"base/watermark.md","mtime":"2018-12-25T02:37:11.279Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-25T09:14:33.688Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"video","level":"1.5.4","depth":2,"next":{"title":"CSS","level":"1.6","depth":1,"path":"css/README.md","ref":"css/README.md","articles":[{"title":"新特性","level":"1.6.1","depth":2,"path":"css/css-01.md","ref":"css/css-01.md","articles":[]}]},"previous":{"title":"水印","level":"1.5.3","depth":2,"path":"base/watermark.md","ref":"base/watermark.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["multipart"],"pluginsConfig":{"multipart":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"base/video.md","mtime":"2018-12-25T08:00:20.797Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-25T09:14:33.688Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

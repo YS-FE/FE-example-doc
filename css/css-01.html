@@ -262,7 +262,20 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../base/cursor.html">
+        <li class="chapter " data-level="1.5.1" data-path="../base/base.html">
+            
+                <a href="../base/base.html">
+            
+                    
+                    base
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../base/cursor.html">
             
                 <a href="../base/cursor.html">
             
@@ -275,12 +288,25 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="../base/watermark.html">
+        <li class="chapter " data-level="1.5.3" data-path="../base/watermark.html">
             
                 <a href="../base/watermark.html">
             
                     
                     水印
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../base/video.html">
+            
+                <a href="../base/video.html">
+            
+                    
+                    video
             
                 </a>
             
@@ -471,6 +497,26 @@ var &#x83B7;&#x53D6;css&#x53D8;&#x91CF;&#x503C;, &#x5B9A;&#x4E49;&#x65F6;&#x9700
             <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--background-color); 
         }
 </code></pre>
+<h2 id="css-&#x9542;&#x7A7A;&#x6548;&#x679C;">css &#x9542;&#x7A7A;&#x6548;&#x679C;</h2>
+<p><img src="imgs/loukong.png" alt=""></p>
+<pre><code class="lang-html">  <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+    <span class="hljs-selector-class">.crop-area</span> {
+      <span class="hljs-attribute">position</span>: absolute;
+      <span class="hljs-attribute">top</span>: <span class="hljs-number">20px</span>;
+      <span class="hljs-attribute">left</span>: <span class="hljs-number">120px</span>;
+      <span class="hljs-attribute">width</span>: <span class="hljs-number">80px</span>;
+      <span class="hljs-attribute">height</span>: <span class="hljs-number">80px</span>;
+      <span class="hljs-attribute">background</span>: <span class="hljs-built_in">linear-gradient</span>(to top, transparent, transparent);
+      <span class="hljs-attribute">outline</span>: <span class="hljs-number">300px</span> solid <span class="hljs-built_in">rgba</span>(0, 0, 0, 0.5); <span class="hljs-comment">/*&#x4F7F;&#x7528; outline&#x5B9E;&#x73B0;&#x6EF4;..*/</span>
+    }
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;crop&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./img/6.webp&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;crop-area&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
 <h2 id="iphonex-&#x9002;&#x914D;&#x95EE;&#x9898;">iphonex &#x9002;&#x914D;&#x95EE;&#x9898;</h2>
 <ul>
 <li><a href="https://webkit.org/blog/7929/designing-websites-for-iphone-x/?hmsr=funteas.com&amp;utm_medium=funteas.com&amp;utm_source=funteas.com" target="_blank">webkit&#x5B98;&#x7F51;&#x6587;&#x6863;</a></li>
@@ -605,7 +651,7 @@ var &#x83B7;&#x53D6;css&#x53D8;&#x91CF;&#x503C;, &#x5B9A;&#x4E49;&#x65F6;&#x9700
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"新特性","level":"1.6.1","depth":2,"next":{"title":"Debug","level":"1.7","depth":1,"path":"debug/README.md","ref":"debug/README.md","articles":[{"title":"移动端调试","level":"1.7.1","depth":2,"path":"debug/mobile-debug.md","ref":"debug/mobile-debug.md","articles":[]}]},"previous":{"title":"CSS","level":"1.6","depth":1,"path":"css/README.md","ref":"css/README.md","articles":[{"title":"新特性","level":"1.6.1","depth":2,"path":"css/css-01.md","ref":"css/css-01.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["multipart"],"pluginsConfig":{"multipart":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"css/css-01.md","mtime":"2018-12-25T05:41:28.214Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-25T07:35:27.243Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"新特性","level":"1.6.1","depth":2,"next":{"title":"Debug","level":"1.7","depth":1,"path":"debug/README.md","ref":"debug/README.md","articles":[{"title":"移动端调试","level":"1.7.1","depth":2,"path":"debug/mobile-debug.md","ref":"debug/mobile-debug.md","articles":[]}]},"previous":{"title":"CSS","level":"1.6","depth":1,"path":"css/README.md","ref":"css/README.md","articles":[{"title":"新特性","level":"1.6.1","depth":2,"path":"css/css-01.md","ref":"css/css-01.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["multipart"],"pluginsConfig":{"multipart":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"css/css-01.md","mtime":"2018-12-25T09:14:24.588Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-25T09:14:33.688Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

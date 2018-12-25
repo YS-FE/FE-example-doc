@@ -18,8 +18,10 @@
     * [vue prop双向通信](vue/vue-prop.md)
 
 * [Base](base/README.md)
+    * [base](base/base.md)
     * [光标](base/cursor.md)
     * [水印](base/watermark.md)
+    * [video](base/video.md)
 
 * [CSS](css/README.md)
     * [新特性](css/css-01.md)

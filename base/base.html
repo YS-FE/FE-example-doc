@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Node · GitBook</title>
+        <title>base · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="event-loop.html" />
+    <link rel="next" href="cursor.html" />
     
     
-    <link rel="prev" href="../debug/mobile-debug.html" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -248,9 +248,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="../base/">
+        <li class="chapter " data-level="1.5" data-path="./">
             
-                <a href="../base/">
+                <a href="./">
             
                     
                     Base
@@ -262,9 +262,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../base/base.html">
+        <li class="chapter active" data-level="1.5.1" data-path="base.html">
             
-                <a href="../base/base.html">
+                <a href="base.html">
             
                     
                     base
@@ -275,9 +275,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="../base/cursor.html">
+        <li class="chapter " data-level="1.5.2" data-path="cursor.html">
             
-                <a href="../base/cursor.html">
+                <a href="cursor.html">
             
                     
                     光标
@@ -288,9 +288,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="../base/watermark.html">
+        <li class="chapter " data-level="1.5.3" data-path="watermark.html">
             
-                <a href="../base/watermark.html">
+                <a href="watermark.html">
             
                     
                     水印
@@ -301,9 +301,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="../base/video.html">
+        <li class="chapter " data-level="1.5.4" data-path="video.html">
             
-                <a href="../base/video.html">
+                <a href="video.html">
             
                     
                     video
@@ -383,9 +383,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.8" data-path="./">
+        <li class="chapter " data-level="1.8" data-path="../node/">
             
-                <a href="./">
+                <a href="../node/">
             
                     
                     Node
@@ -397,9 +397,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.1" data-path="event-loop.html">
+        <li class="chapter " data-level="1.8.1" data-path="../node/event-loop.html">
             
-                <a href="event-loop.html">
+                <a href="../node/event-loop.html">
             
                     
                     事件循环
@@ -410,9 +410,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.2" data-path="cc.html">
+        <li class="chapter " data-level="1.8.2" data-path="../node/cc.html">
             
-                <a href="cc.html">
+                <a href="../node/cc.html">
             
                     
                     C++
@@ -458,7 +458,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Node</a>
+        <a href=".." >base</a>
     </h1>
 </div>
 
@@ -473,7 +473,90 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="node">node</h1>
+                                <h1 id="base">base</h1>
+<h2 id="visibilitychange--&#x9875;&#x9762;&#x663E;&#x793A;&#x6216;&#x9690;&#x85CF;&#x65F6;&#x89E6;&#x53D1;">visibilitychange  &#x9875;&#x9762;&#x663E;&#x793A;&#x6216;&#x9690;&#x85CF;&#x65F6;&#x89E6;&#x53D1;</h2>
+<pre><code class="lang-js">
+<span class="hljs-built_in">document</span>.addEventListener(<span class="hljs-string">&quot;visibilitychange&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-built_in">console</span>.log( <span class="hljs-built_in">document</span>.visibilityState ); <span class="hljs-comment">//visible, hidden</span>
+});
+</code></pre>
+<h2 id="&#x68C0;&#x6D4B;&#x6D4F;&#x89C8;&#x5668;fps">&#x68C0;&#x6D4B;&#x6D4F;&#x89C8;&#x5668;FPS</h2>
+<pre><code class="lang-js">
+    <span class="hljs-keyword">var</span> lastTime = performance.now();
+    <span class="hljs-keyword">var</span> lastFameTime = performance.now();
+    <span class="hljs-keyword">var</span> frame = <span class="hljs-number">0</span>;
+
+    <span class="hljs-keyword">var</span> loop = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">time</span>) </span>{
+      <span class="hljs-keyword">var</span> now = performance.now();
+      <span class="hljs-keyword">var</span> fs = (now - lastFameTime);
+      lastFameTime = now;
+      <span class="hljs-keyword">var</span> fps = <span class="hljs-built_in">Math</span>.round(<span class="hljs-number">1000</span> / fs);
+      frame++;
+
+
+      <span class="hljs-comment">//fps &#x8D8A;&#x63A5;&#x8FD1;60, &#x8D8A;&#x6D41;&#x7545;</span>
+      <span class="hljs-built_in">console</span>.log(fps);
+
+      <span class="hljs-keyword">if</span> (now &gt; <span class="hljs-number">1000</span> + lastTime) {
+        <span class="hljs-keyword">var</span> fps = <span class="hljs-built_in">Math</span>.round((frame * <span class="hljs-number">1000</span>) / (now - lastTime));
+        frame = <span class="hljs-number">0</span>;
+        lastTime = now;
+      };
+      <span class="hljs-built_in">window</span>.requestAnimationFrame(loop);
+    };
+</code></pre>
+<h2 id="mutationobserver-&#x68C0;&#x6D4B;-dom&#x7684;&#x53D8;&#x5316;">MutationObserver &#x68C0;&#x6D4B; dom&#x7684;&#x53D8;&#x5316;</h2>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;test01&quot;</span>&gt;</span>&#x6D4B;&#x8BD5;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;test02&quot;</span>&gt;</span>&#x6D4B;&#x8BD5;02<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;btn&quot;</span>&gt;</span>&#x70B9;&#x51FB;<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+
+    <span class="hljs-keyword">var</span> button = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;btn&quot;</span>);
+    <span class="hljs-keyword">var</span> targetNode01 = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;test01&apos;</span>);
+    <span class="hljs-keyword">var</span> targetNode02 = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;test02&apos;</span>);
+
+    button.addEventListener(<span class="hljs-string">&apos;click&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>)</span>{
+      targetNode01.classList.add(<span class="hljs-string">&apos;class01&apos;</span>);
+      targetNode02.innerHTML =  <span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x6D4B;&#x8BD5;&#x6D4B;&#x8BD5;0000&quot;</span>;
+    });
+
+
+    <span class="hljs-comment">// Options for the observer (which mutations to observe)</span>
+    <span class="hljs-keyword">var</span> config = {
+      attributes: <span class="hljs-literal">true</span>,
+      childList: <span class="hljs-literal">true</span>,
+      subtree: <span class="hljs-literal">true</span>
+    };
+
+    <span class="hljs-comment">// Callback function to execute when mutations are observed</span>
+    <span class="hljs-keyword">var</span> callback = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">mutationsList</span>) </span>{
+
+      <span class="hljs-built_in">console</span>.log(mutationsList);
+
+      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> mutation <span class="hljs-keyword">of</span> mutationsList) {
+        <span class="hljs-keyword">if</span> (mutation.type == <span class="hljs-string">&apos;childList&apos;</span>) {
+          <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;A child node has been added or removed.&apos;</span>);
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (mutation.type == <span class="hljs-string">&apos;attributes&apos;</span>) {
+          <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;The &apos;</span> + mutation.attributeName + <span class="hljs-string">&apos; attribute was modified.&apos;</span>);
+        }
+      }
+    };
+
+    <span class="hljs-comment">// Create an observer instance linked to the callback function</span>
+    <span class="hljs-keyword">var</span> observer = <span class="hljs-keyword">new</span> MutationObserver(callback);
+
+    <span class="hljs-comment">// Start observing the target node for configured mutations</span>
+    observer.observe(targetNode01, config);
+
+    observer.observe(targetNode02, config);
+
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+</code></pre>
 
                                 
                                 </section>
@@ -501,12 +584,12 @@
 
             
                 
-                <a href="../debug/mobile-debug.html" class="navigation navigation-prev " aria-label="Previous page: 移动端调试">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Base">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="event-loop.html" class="navigation navigation-next " aria-label="Next page: 事件循环">
+                <a href="cursor.html" class="navigation navigation-next " aria-label="Next page: 光标">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -517,7 +600,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Node","level":"1.8","depth":1,"next":{"title":"事件循环","level":"1.8.1","depth":2,"path":"node/event-loop.md","ref":"node/event-loop.md","articles":[]},"previous":{"title":"移动端调试","level":"1.7.1","depth":2,"path":"debug/mobile-debug.md","ref":"debug/mobile-debug.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["multipart"],"pluginsConfig":{"multipart":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"node/README.md","mtime":"2018-12-04T02:31:48.917Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-25T09:14:33.688Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"base","level":"1.5.1","depth":2,"next":{"title":"光标","level":"1.5.2","depth":2,"path":"base/cursor.md","ref":"base/cursor.md","articles":[]},"previous":{"title":"Base","level":"1.5","depth":1,"path":"base/README.md","ref":"base/README.md","articles":[{"title":"base","level":"1.5.1","depth":2,"path":"base/base.md","ref":"base/base.md","articles":[]},{"title":"光标","level":"1.5.2","depth":2,"path":"base/cursor.md","ref":"base/cursor.md","articles":[]},{"title":"水印","level":"1.5.3","depth":2,"path":"base/watermark.md","ref":"base/watermark.md","articles":[]},{"title":"video","level":"1.5.4","depth":2,"path":"base/video.md","ref":"base/video.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["multipart"],"pluginsConfig":{"multipart":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"base/base.md","mtime":"2018-12-25T09:04:47.770Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-25T09:14:33.688Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
