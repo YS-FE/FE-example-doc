@@ -3,7 +3,7 @@
 * [Introduction](README.md)
 
 * [Http](http/README.md)
-    * [accept](http/http-01.md)
+    * [header](http/http-01.md)
 
 * [React](react/README.md)
     * [redux中间件](react/redux-middleware.md)
