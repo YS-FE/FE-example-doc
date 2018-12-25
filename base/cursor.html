@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>vue prop双向通信 · GitBook</title>
+        <title>光标 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../base/" />
+    <link rel="next" href="../CSS/" />
     
     
-    <link rel="prev" href="vue-async-load.html" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -204,9 +204,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="vue-async-load.html">
+        <li class="chapter " data-level="1.3.1" data-path="../vue/vue-async-load.html">
             
-                <a href="vue-async-load.html">
+                <a href="../vue/vue-async-load.html">
             
                     
                     vue组件异步加载
@@ -217,9 +217,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.2" data-path="vue-prop.html">
+        <li class="chapter " data-level="1.3.2" data-path="../vue/vue-prop.html">
             
-                <a href="vue-prop.html">
+                <a href="../vue/vue-prop.html">
             
                     
                     vue prop双向通信
@@ -235,9 +235,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../base/">
+        <li class="chapter " data-level="1.4" data-path="./">
             
-                <a href="../base/">
+                <a href="./">
             
                     
                     Base
@@ -249,9 +249,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../base/cursor.html">
+        <li class="chapter active" data-level="1.4.1" data-path="cursor.html">
             
-                <a href="../base/cursor.html">
+                <a href="cursor.html">
             
                     
                     光标
@@ -393,7 +393,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >vue prop双向通信</a>
+        <a href=".." >光标</a>
     </h1>
 </div>
 
@@ -408,106 +408,32 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="prop-&#x53CC;&#x5411;&#x7ED1;&#x5B9A;">prop &apos;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&apos;</h1>
-<h2 id="&#x65B9;&#x6CD5;&#x4E00;">&#x65B9;&#x6CD5;&#x4E00;</h2>
-<pre><code class="lang-js">
-<span class="hljs-number">1.</span> &#x7236;&#x7EC4;&#x4EF6;&#x4E2D;
-
-<span class="hljs-comment">//&#x7ED9;&#x5B50;&#x7EC4;&#x4EF6; text-document&#x4F20;&#x9012; title&#x5C5E;&#x6027;</span>
-&lt;text-<span class="hljs-built_in">document</span>
-  v-bind:title=<span class="hljs-string">&quot;doc.title&quot;</span>
-  v-on:update:title=<span class="hljs-string">&quot;doc.title = $event&quot;</span>
-&gt;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">text-document</span>&gt;</span>
-
-data() {
-    return {
-        doc: {
-            title: {},
-            ...
-        }
-    }
-}
-
-
-2. &#x5B50;&#x7EC4;&#x4EF6;&#x4E2D;
-this.$emit(&quot;update:title&quot;, title);
-</span></code></pre>
-<h2 id="&#x65B9;&#x6CD5;&#x4E8C;">&#x65B9;&#x6CD5;&#x4E8C;</h2>
-<p>&#x4F7F;&#x7528;vue sync&#x5173;&#x952E;&#x5B57;</p>
-<pre><code class="lang-js">
-
-<span class="hljs-number">1.</span> &#x7236;&#x7EC4;&#x4EF6;&#x4E2D;
-
-<span class="hljs-comment">//&#x7ED9;&#x5B50;&#x7EC4;&#x4EF6; text-document&#x4F20;&#x9012; title&#x5C5E;&#x6027;</span>
-&lt;text-<span class="hljs-built_in">document</span>
-  v-bind:title.sync=<span class="hljs-string">&quot;doc.title&quot;</span>
-&gt;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">text-document</span>&gt;</span>
-
-data() {
-    return {
-        doc: {
-            title: {},
-            ...
-        }
-    }
-}
-
-2. &#x5B50;&#x7EC4;&#x4EF6;&#x4E2D;
-this.$emit(&quot;update:title&quot;, title);
-</span></code></pre>
-<h2 id="&#x793A;&#x4F8B;&#x4EE3;&#x7801;">&#x793A;&#x4F8B;&#x4EE3;&#x7801;</h2>
-<pre><code>&#x7236;&#x7EC4;&#x4EF6;
-&lt;child-one v-bind:one.sync=&quot;doc.one&quot;&gt;&lt;/child-one&gt;
-&lt;child-two v-bind:two.sync=&quot;doc.two&quot;&gt;&lt;/child-two&gt;
-
-data(){
-    return {
-        doc: {
-            one: {},
-            two: {},
-            ...
-        }
-    }
-}
-</code></pre><pre><code>&#x5B50;&#x7EC4;&#x4EF6; child-one
-
-&lt;div&gt;
- &lt;input v-mode=&quot;childOne.text&quot;/&gt;
-&lt;div&gt;
-
-created(){
-}
-
-mounted(){
-    /*
-    &#x5F53;&#x5B50;&#x7EC4;&#x4EF6;&#x5BF9;&#x8C61;&#x7ED3;&#x6784;&#x548C;&#x7236;&#x7EC4;&#x4EF6;&#x4F20;&#x9012;&#x7684;&#x5B8C;&#x5168;&#x4E00;&#x81F4;&#x65F6;,&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5C06;&#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x7684;&#x4EE3;&#x7801;&#x653E;&#x5728;mounted&#x4E2D;
-    &#x5982;&#x679C;&#x7ED3;&#x6784;&#x4E0D;&#x4E00;&#x81F4;&#x65F6;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x9700;&#x8981;&#x5728;iput&#x89E6;&#x53D1;&#x7684;&#x81EA;&#x5B9A;&#x4E8B;&#x4EF6;&#x4E2D; &#x53BB;&#x89E6;&#x53D1;emit&#x4E86;
-    */
-    this.$emit(&quot;update:one&quot;, this.childOne);
-}
-
-watch: {
-    one: function(newValue, oldValue){
-        //&#x5F53;prop&#x6539;&#x53D8;&#x65F6;&#xFF0C;&#x8D4B;&#x503C;&#x7ED9;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;data
-        this.childOne = newValue;
-    }
-}
-
-data(){
-    return {
-        childOne: {
-            text: &apos;&apos;
-        }
-    }
-}
-
-props: {
-    one: {
-        type: Object,
-        required: true
-    }
-}
+                                <h1 id="&#x63A7;&#x5236;&#x5149;&#x6807;&#x7684;&#x4F4D;&#x7F6E;">&#x63A7;&#x5236;&#x5149;&#x6807;&#x7684;&#x4F4D;&#x7F6E;</h1>
+<h2 id="&#x5BCC;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x65F6;&#xFF0C;&#x63A7;&#x5236;&#x5B57;&#x7B26;&#x4E2A;&#x6570;&#xFF0C;&#x63A7;&#x5236;&#x5149;&#x6807;&#x4F4D;&#x7F6E;">&#x5BCC;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x65F6;&#xFF0C;&#x63A7;&#x5236;&#x5B57;&#x7B26;&#x4E2A;&#x6570;&#xFF0C;&#x63A7;&#x5236;&#x5149;&#x6807;&#x4F4D;&#x7F6E;</h2>
+<pre><code class="lang-html">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;edit&quot;</span> <span class="hljs-attr">contenteditable</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
+<pre><code class="lang-js">        <span class="hljs-keyword">let</span> node = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;edit&apos;</span>);
+
+        $(<span class="hljs-string">&quot;#edit&quot;</span>).on(<span class="hljs-string">&apos;input&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">let</span> temp = $(<span class="hljs-keyword">this</span>).text();
+
+            <span class="hljs-keyword">if</span> (temp.length &gt; <span class="hljs-number">8</span>) {
+                $(<span class="hljs-keyword">this</span>).text(temp.slice(<span class="hljs-number">0</span>, <span class="hljs-number">8</span>)); <span class="hljs-comment">//&#x622A;&#x53D6;&#x5B57;&#x7B26;</span>
+
+                <span class="hljs-keyword">var</span> sel = <span class="hljs-built_in">window</span>.getSelection();
+                <span class="hljs-keyword">var</span> range = <span class="hljs-built_in">document</span>.createRange();
+                range.selectNodeContents($(<span class="hljs-string">&apos;#edit&apos;</span>).get(<span class="hljs-number">0</span>)); <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x9009;&#x62E9;&#x8303;&#x56F4;</span>
+
+                <span class="hljs-comment">// range.setStart(node.childNodes[0], 0); //&#x8BBE;&#x7F6E;&#x8303;&#x56F4;</span>
+                <span class="hljs-comment">// range.setEnd(node.childNodes[0], 3);</span>
+
+                range.collapse(<span class="hljs-literal">false</span>);
+                sel.removeAllRanges();
+                sel.addRange(range); <span class="hljs-comment">// &#x622A;&#x53D6;&#x4E4B;&#x540E;&#x4FDD;&#x8BC1;&#x5149;&#x6807;&#x4ECD;&#x7136;&#x5728;&#x6700;&#x540E;</span>
+            }
+        })
+</code></pre>
+
                                 
                                 </section>
                             
@@ -534,12 +460,12 @@ props: {
 
             
                 
-                <a href="vue-async-load.html" class="navigation navigation-prev " aria-label="Previous page: vue组件异步加载">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Base">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../base/" class="navigation navigation-next " aria-label="Next page: Base">
+                <a href="../CSS/" class="navigation navigation-next " aria-label="Next page: CSS">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -550,7 +476,7 @@ props: {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"vue prop双向通信","level":"1.3.2","depth":2,"next":{"title":"Base","level":"1.4","depth":1,"path":"base/README.md","ref":"base/README.md","articles":[{"title":"光标","level":"1.4.1","depth":2,"path":"base/cursor.md","ref":"base/cursor.md","articles":[]}]},"previous":{"title":"vue组件异步加载","level":"1.3.1","depth":2,"path":"vue/vue-async-load.md","ref":"vue/vue-async-load.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["multipart"],"pluginsConfig":{"multipart":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"vue/vue-prop.md","mtime":"2018-07-19T06:31:03.595Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-25T02:19:36.253Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"光标","level":"1.4.1","depth":2,"next":{"title":"CSS","level":"1.5","depth":1,"path":"CSS/README.md","ref":"CSS/README.md","articles":[{"title":"新特性","level":"1.5.1","depth":2,"path":"CSS/css-01.md","ref":"CSS/css-01.md","articles":[]}]},"previous":{"title":"Base","level":"1.4","depth":1,"path":"base/README.md","ref":"base/README.md","articles":[{"title":"光标","level":"1.4.1","depth":2,"path":"base/cursor.md","ref":"base/cursor.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["multipart"],"pluginsConfig":{"multipart":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"base/cursor.md","mtime":"2018-12-25T02:19:01.897Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-25T02:19:36.253Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -13,6 +13,9 @@
     * [vue组件异步加载](vue/vue-async-load.md)
     * [vue prop双向通信](vue/vue-prop.md)
 
+* [Base](base/README.md)
+    * [光标](base/cursor.md)
+
 * [CSS](CSS/README.md)
     * [新特性](CSS/css-01.md)
 
