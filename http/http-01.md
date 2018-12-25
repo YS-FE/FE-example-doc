@@ -227,3 +227,119 @@ http.createServer(function (request, response) {
 }).listen(8888);
 
 ```
+
+
+
+## Etag
+
+```js
+const http = require('http')
+const fs = require('fs')
+
+http.createServer(function (request, response) {
+
+  if (request.url === '/') {
+    const html = fs.readFileSync('test.html', 'utf8')
+    response.writeHead(200, {
+      'Content-Type': 'text/html'
+    })
+    response.end(html)
+  }
+
+  if (request.url === '/script.js') {
+    
+    const etag = request.headers['if-none-match']
+
+    if (etag === '777') {
+      response.writeHead(304, {
+        'Content-Type': 'text/javascript',
+        'Cache-Control': 'max-age=2000000, no-cache',
+        'Last-Modified': '123',
+        'Etag': '777'
+      })
+      response.end();
+
+    } else {
+      response.writeHead(200, {
+        'Content-Type': 'text/javascript',
+        'Cache-Control': 'max-age=2000000, no-cache',
+        'Last-Modified': '123',
+        'Etag': '777'
+      })
+      response.end('console.log("script loaded twice")')
+    }
+  }
+}).listen(8888);
+```
+
+
+## Vary
+### WEB服务器用该头部的内容告诉 Cache 服务器，在什么条件下才能用本响应所返回的对象响应后续的请求
+
+
+```html
+<!-- client -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div>This is content, and data is: <span id="data"></span></div>
+  <button id="button">click me</button>
+</body>
+<script>
+  var index = 0
+  function doRequest () {
+    var data = document.getElementById('data')
+    data.innerText = ''
+    fetch('/data', {
+      headers: {
+        'X-Test-Cache': index++
+      }
+    }).then(function (resp) {
+      return resp.text()
+    }).then(function (text) {
+      data.innerText = text
+    })
+  }
+  document.getElementById('button').addEventListener('click', doRequest)
+</script>
+</html>
+```
+
+```js
+
+//server.js
+const http = require('http')
+const fs = require('fs')
+
+const wait = (seconds) => {
+  return new Promise((resolve) => {
+    setTimeout(resolve, seconds * 1000)
+  })
+}
+http.createServer(function (request, response) {
+  console.log('request come', request.url)
+
+  if (request.url === '/') {
+    const html = fs.readFileSync('test.html', 'utf8')
+    response.writeHead(200, {
+      'Content-Type': 'text/html'
+    })
+    response.end(html)
+  }
+
+  if (request.url === '/data') {
+    response.writeHead(200, {
+      'Cache-Control': 'max-age=2, s-maxage=20, private',
+      'Vary': 'X-Test-Cache'
+    })
+    wait(2).then(() => response.end('success'))
+  }
+}).listen(8888)
+```
