@@ -15,6 +15,7 @@
 
 * [Base](base/README.md)
     * [光标](base/cursor.md)
+    * [水印](base/watermark.md)
 
 * [CSS](CSS/README.md)
     * [新特性](CSS/css-01.md)

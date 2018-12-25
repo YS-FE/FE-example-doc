@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Base · GitBook</title>
+        <title>水印 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="cursor.html" />
+    <link rel="next" href="../CSS/" />
     
     
-    <link rel="prev" href="../vue/vue-prop.html" />
+    <link rel="prev" href="cursor.html" />
     
 
     </head>
@@ -235,7 +235,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4" data-path="./">
+        <li class="chapter " data-level="1.4" data-path="./">
             
                 <a href="./">
             
@@ -262,7 +262,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="watermark.html">
+        <li class="chapter active" data-level="1.4.2" data-path="watermark.html">
             
                 <a href="watermark.html">
             
@@ -406,7 +406,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Base</a>
+        <a href=".." >水印</a>
     </h1>
 </div>
 
@@ -421,7 +421,42 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="base">base</h1>
+                                <h1 id="&#x6C34;&#x5370;">&#x6C34;&#x5370;</h1>
+<h2 id="canvas-&#x7ED8;&#x5236;">canvas &#x7ED8;&#x5236;</h2>
+<pre><code class="lang-js">
+    <span class="hljs-comment">//canvas &#x7ED8;&#x5236;&#x6C34;&#x5370;</span>
+    <span class="hljs-keyword">const</span> canvas = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;canvas&apos;</span>);
+    canvas.setAttribute(<span class="hljs-string">&apos;width&apos;</span>, <span class="hljs-number">100</span>);
+    canvas.setAttribute(<span class="hljs-string">&apos;height&apos;</span>, <span class="hljs-number">100</span>);
+    canvas.setAttribute(<span class="hljs-string">&apos;opacity&apos;</span>, <span class="hljs-number">0.5</span>);
+    <span class="hljs-keyword">const</span> ctx = canvas.getContext(<span class="hljs-string">&apos;2d&apos;</span>);
+
+    ctx.fillStyle = <span class="hljs-string">&quot;red&quot;</span>;
+    ctx.rotate(<span class="hljs-built_in">Math</span>.PI / <span class="hljs-number">180</span> * <span class="hljs-number">20</span>);
+    ctx.fillText(<span class="hljs-string">&quot;OH MY COG&quot;</span>, <span class="hljs-number">80</span>, <span class="hljs-number">10</span>);
+
+    <span class="hljs-comment">//&#x5BFC;&#x51FA;url</span>
+    <span class="hljs-keyword">var</span> base64Url = canvas.toDataURL();
+
+    <span class="hljs-comment">//&#x5E94;&#x7528;&#x5230;&#x5143;&#x7D20;</span>
+    <span class="hljs-keyword">const</span> watermarkDiv = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;div&apos;</span>);
+    watermarkDiv.setAttribute(<span class="hljs-string">&apos;style&apos;</span>,
+        <span class="hljs-string">`
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height: 100%;
+        z-index:1000;
+        pointer-events:none;
+        background-repeat:repeat;
+        background-image:url(&apos;<span class="hljs-subst">${base64Url}</span>&apos;)
+        `</span>
+    );
+
+    <span class="hljs-comment">//&#x6DFB;&#x52A0;&#x5230;&#x9875;&#x9762;&#x5373;&#x53EF;</span>
+    <span class="hljs-built_in">document</span>.body.appendChild(watermarkDiv)
+</code></pre>
 
                                 
                                 </section>
@@ -449,12 +484,12 @@
 
             
                 
-                <a href="../vue/vue-prop.html" class="navigation navigation-prev " aria-label="Previous page: vue prop双向通信">
+                <a href="cursor.html" class="navigation navigation-prev " aria-label="Previous page: 光标">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="cursor.html" class="navigation navigation-next " aria-label="Next page: 光标">
+                <a href="../CSS/" class="navigation navigation-next " aria-label="Next page: CSS">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -465,7 +500,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Base","level":"1.4","depth":1,"next":{"title":"光标","level":"1.4.1","depth":2,"path":"base/cursor.md","ref":"base/cursor.md","articles":[]},"previous":{"title":"vue prop双向通信","level":"1.3.2","depth":2,"path":"vue/vue-prop.md","ref":"vue/vue-prop.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["multipart"],"pluginsConfig":{"multipart":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"base/README.md","mtime":"2018-12-25T02:13:42.410Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-25T02:37:17.640Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"水印","level":"1.4.2","depth":2,"next":{"title":"CSS","level":"1.5","depth":1,"path":"CSS/README.md","ref":"CSS/README.md","articles":[{"title":"新特性","level":"1.5.1","depth":2,"path":"CSS/css-01.md","ref":"CSS/css-01.md","articles":[]}]},"previous":{"title":"光标","level":"1.4.1","depth":2,"path":"base/cursor.md","ref":"base/cursor.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["multipart"],"pluginsConfig":{"multipart":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"base/watermark.md","mtime":"2018-12-25T02:37:11.279Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-25T02:37:17.640Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
