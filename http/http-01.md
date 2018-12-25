@@ -1,6 +1,6 @@
 # http
 
-## accept
+## accept 头
 
 ```html
   <!-- client -->
@@ -25,6 +25,10 @@
 
 ```js
 //server.js
+const http = require('http')
+const fs = require('fs')
+const zlib = require('zlib')
+
 http.createServer(function (request, response) {
   const html = fs.readFileSync('test.html')
 
@@ -38,4 +42,110 @@ http.createServer(function (request, response) {
 
 }).listen(8888);
 
+```
+
+
+
+## cache-control
+
+```js
+//server.js
+
+const http = require('http')
+const fs = require('fs')
+
+http.createServer(function (request, response) {
+
+  if (request.url === '/') {
+    const html = fs.readFileSync('test.html', 'utf8')
+    response.writeHead(200, {
+      'Content-Type': 'text/html'
+    })
+    response.end(html)
+  }
+
+  if (request.url === '/script.js') {
+    response.writeHead(200, {
+      'Content-Type': 'text/javascript',
+      'Cache-Control': 'max-age=20' //设置缓存时间
+    })
+    response.end('console.log("script loaded")')
+  }
+}).listen(8888)
+```
+
+
+## cookie
+
+```js
+//server.js
+
+const http = require('http')
+const fs = require('fs')
+
+http.createServer(function (request, response) {
+  console.log('request come', request.url)
+
+  if (request.url === '/') {
+    const html = fs.readFileSync('test.html', 'utf8')
+    response.writeHead(200, {
+      'Content-Type': 'text/html',
+      'Set-Cookie': ['id=123; max-age=2', 'abc=456;domain=test.com']
+    })
+    response.end(html)
+  }
+
+}).listen(8888)
+```
+
+
+
+## connection
+
+```js
+//server.js
+
+const http = require('http')
+const fs = require('fs')
+
+http.createServer(function (request, response) {
+
+  const html = fs.readFileSync('test.html', 'utf8')
+  const img = fs.readFileSync('test.jpg')
+  if (request.url === '/') {
+    response.writeHead(200, {
+      'Content-Type': 'text/html',
+    })
+    response.end(html)
+  } else {
+    response.writeHead(200, {
+      'Content-Type': 'image/jpg',
+      'Connection': 'keep-alive' // or close,  浏览器会复用连接或者 重新创建连接
+    })
+    response.end(img)
+  }
+
+}).listen(8888)
+```
+
+
+
+## cors  跨域设置
+
+### 跨域的 请求方法，请求头，都有限制
+
+```js
+const http = require('http')
+
+http.createServer(function (request, response) {
+  response.writeHead(200, {
+    'Access-Control-Allow-Origin': 'http://127.0.0.1:8888',
+    'Access-Control-Allow-Headers': 'X-Test-Cors',
+    'Access-Control-Allow-Methods': 'POST, PUT, DELETE',
+    'Access-Control-Max-Age': '1000'
+  })
+
+  response.end('hello world!');
+
+}).listen(8887)
 ```
