@@ -110,3 +110,13 @@
 </html>
 
 ```
+
+
+## video 内联播放
+
+### video  添加 webkit-playsinline、 playsinline
+
+```html
+    <video id="videoOne" controls webkit-playsinline="true" playsinline="true"  
+    poster="./dist/img/xiangqing.png"  src="./dist/img/video.mp4"></video>
+```
