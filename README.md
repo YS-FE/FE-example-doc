@@ -16,3 +16,7 @@
 1. 修改 book.json文件
 2. gitbook install 安装
 
+
+## 本地服务
+`gitbook serve`
+

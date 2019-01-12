@@ -4,11 +4,11 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>新特性 · GitBook</title>
+        <title>特性 · 一波流</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content="ys">
         
         
     
@@ -61,7 +61,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../debug/" />
+    <link rel="next" href="../mobile/" />
     
     
     <link rel="prev" href="./" />
@@ -357,7 +357,7 @@
                 <a href="css-01.html">
             
                     
-                    新特性
+                    特性
             
                 </a>
             
@@ -370,7 +370,39 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="../debug/">
+        <li class="chapter " data-level="1.7" data-path="../mobile/">
+            
+                <a href="../mobile/">
+            
+                    
+                    Mobile
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../mobile/mobile-01.html">
+            
+                <a href="../mobile/mobile-01.html">
+            
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../debug/">
             
                 <a href="../debug/">
             
@@ -384,7 +416,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.7.1" data-path="../debug/mobile-debug.html">
+        <li class="chapter " data-level="1.8.1" data-path="../debug/mobile-debug.html">
             
                 <a href="../debug/mobile-debug.html">
             
@@ -402,7 +434,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="../node/">
+        <li class="chapter " data-level="1.9" data-path="../node/">
             
                 <a href="../node/">
             
@@ -416,7 +448,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.1" data-path="../node/event-loop.html">
+        <li class="chapter " data-level="1.9.1" data-path="../node/event-loop.html">
             
                 <a href="../node/event-loop.html">
             
@@ -429,7 +461,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.2" data-path="../node/cc.html">
+        <li class="chapter " data-level="1.9.2" data-path="../node/cc.html">
             
                 <a href="../node/cc.html">
             
@@ -477,7 +509,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >新特性</a>
+        <a href=".." >特性</a>
     </h1>
 </div>
 
@@ -493,6 +525,16 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="css&#x7279;&#x6027;">CSS&#x7279;&#x6027;</h1>
+<h2 id="&#x5B57;&#x6BCD;&#x8F6C;&#x6362;">&#x5B57;&#x6BCD;&#x8F6C;&#x6362;</h2>
+<pre><code>none&#xFF1A; &#x65E0;&#x8F6C;&#x6362;
+capitalize&#xFF1A; &#x5C06;&#x6BCF;&#x4E2A;&#x5355;&#x8BCD;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x6BCD;&#x8F6C;&#x6362;&#x6210;&#x5927;&#x5199;
+uppercase&#xFF1A; &#x5C06;&#x6BCF;&#x4E2A;&#x5355;&#x8BCD;&#x8F6C;&#x6362;&#x6210;&#x5927;&#x5199;
+lowercase&#xFF1A;&#x5C06;&#x6BCF;&#x4E2A;&#x5355;&#x8BCD;&#x8F6C;&#x6362;&#x6210;&#x5C0F;&#x5199;
+</code></pre><p>//&#x5B9E;&#x65F6;&#x8F93;&#x5165;&#x5373;&#x53EF;&#x53D8;&#x4E3A;&#x5927;&#x5199;</p>
+<pre><code class="lang-css"><span class="hljs-selector-tag">input</span> {
+    <span class="hljs-attribute">text-transform</span>: uppercase;
+}
+</code></pre>
 <h2 id="calc&#x8BA1;&#x7B97;-var">calc&#x8BA1;&#x7B97;, var</h2>
 <p>calc() &#x652F;&#x6301;&#x7B80;&#x5355;&#x7684; &#x52A0;&#x51CF;&#x4E58;&#x9664;.
 var &#x83B7;&#x53D6;css&#x53D8;&#x91CF;&#x503C;, &#x5B9A;&#x4E49;&#x65F6;&#x9700;&#x8981;&#x9075;&#x7167;&#x547D;&#x540D;&#x89C4;&#x8303;</p>
@@ -659,7 +701,7 @@ var &#x83B7;&#x53D6;css&#x53D8;&#x91CF;&#x503C;, &#x5B9A;&#x4E49;&#x65F6;&#x9700
                 </a>
                 
                 
-                <a href="../debug/" class="navigation navigation-next " aria-label="Next page: Debug">
+                <a href="../mobile/" class="navigation navigation-next " aria-label="Next page: Mobile">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -670,7 +712,7 @@ var &#x83B7;&#x53D6;css&#x53D8;&#x91CF;&#x503C;, &#x5B9A;&#x4E49;&#x65F6;&#x9700
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"新特性","level":"1.6.1","depth":2,"next":{"title":"Debug","level":"1.7","depth":1,"path":"debug/README.md","ref":"debug/README.md","articles":[{"title":"移动端调试","level":"1.7.1","depth":2,"path":"debug/mobile-debug.md","ref":"debug/mobile-debug.md","articles":[]}]},"previous":{"title":"CSS","level":"1.6","depth":1,"path":"css/README.md","ref":"css/README.md","articles":[{"title":"新特性","level":"1.6.1","depth":2,"path":"css/css-01.md","ref":"css/css-01.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["multipart"],"pluginsConfig":{"multipart":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"css/css-01.md","mtime":"2018-12-25T09:16:19.418Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-09T03:28:55.660Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"特性","level":"1.6.1","depth":2,"next":{"title":"Mobile","level":"1.7","depth":1,"path":"mobile/README.md","ref":"mobile/README.md","articles":[{"title":"常见问题","level":"1.7.1","depth":2,"path":"mobile/mobile-01.md","ref":"mobile/mobile-01.md","articles":[]}]},"previous":{"title":"CSS","level":"1.6","depth":1,"path":"css/README.md","ref":"css/README.md","articles":[{"title":"特性","level":"1.6.1","depth":2,"path":"css/css-01.md","ref":"css/css-01.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["multipart","copy-code-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"multipart":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ys","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"一波流","gitbook":"*"},"file":{"path":"css/css-01.md","mtime":"2019-01-12T05:37:53.765Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-12T06:10:26.840Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -678,6 +720,10 @@ var &#x83B7;&#x53D6;css&#x53D8;&#x91CF;&#x503C;, &#x5B9A;&#x4E49;&#x65F6;&#x9700
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

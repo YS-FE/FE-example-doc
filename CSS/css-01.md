@@ -1,6 +1,23 @@
 # CSS特性
 
 
+## 字母转换
+
+```
+none： 无转换
+capitalize： 将每个单词的第一个字母转换成大写
+uppercase： 将每个单词转换成大写
+lowercase：将每个单词转换成小写
+
+```
+
+//实时输入即可变为大写
+```css
+input {
+    text-transform: uppercase;
+}
+```
+
 ## calc计算, var 
 calc() 支持简单的 加减乘除.
 var 获取css变量值, 定义时需要遵照命名规范

@@ -1,5 +1,8 @@
 {
+    "title": "一波流",
+    "author": "ys",
     "plugins": [
-        "multipart"
+        "multipart",
+        "copy-code-button"
     ]
 }
