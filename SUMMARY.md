@@ -42,4 +42,4 @@
     * [rzsz](set/set-01.md)
 
 * [数据库](database/README.md)
-    * [mongodb](datbase/01.md)
+    * [mongodb](database/01.md)
