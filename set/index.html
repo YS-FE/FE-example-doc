@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>react-router相关 · 一波流</title>
+        <title>配置 · 一波流</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="react-hooks.html" />
+    <link rel="next" href="set-01.html" />
     
     
-    <link rel="prev" href="react-server.html" />
+    <link rel="prev" href="../node/cc.html" />
     
 
     </head>
@@ -170,7 +170,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="README.md">
+        <li class="chapter " data-level="1.4" data-path="../react/README.md">
             
                 <span>
             
@@ -184,9 +184,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="redux-middleware.html">
+        <li class="chapter " data-level="1.4.1" data-path="../react/redux-middleware.html">
             
-                <a href="redux-middleware.html">
+                <a href="../react/redux-middleware.html">
             
                     
                     redux中间件
@@ -197,9 +197,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="react-component.html">
+        <li class="chapter " data-level="1.4.2" data-path="../react/react-component.html">
             
-                <a href="react-component.html">
+                <a href="../react/react-component.html">
             
                     
                     react组件动态加载
@@ -210,9 +210,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.3" data-path="react-server.html">
+        <li class="chapter " data-level="1.4.3" data-path="../react/react-server.html">
             
-                <a href="react-server.html">
+                <a href="../react/react-server.html">
             
                     
                     react服务端渲染
@@ -223,9 +223,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4.4" data-path="react-router.html">
+        <li class="chapter " data-level="1.4.4" data-path="../react/react-router.html">
             
-                <a href="react-router.html">
+                <a href="../react/react-router.html">
             
                     
                     react-router相关
@@ -236,9 +236,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.5" data-path="react-hooks.html">
+        <li class="chapter " data-level="1.4.5" data-path="../react/react-hooks.html">
             
-                <a href="react-hooks.html">
+                <a href="../react/react-hooks.html">
             
                     
                     react Hooks
@@ -511,9 +511,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11" data-path="../set/">
+        <li class="chapter active" data-level="1.11" data-path="./">
             
-                <a href="../set/">
+                <a href="./">
             
                     
                     配置
@@ -525,9 +525,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.11.1" data-path="../set/set-01.html">
+        <li class="chapter " data-level="1.11.1" data-path="set-01.html">
             
-                <a href="../set/set-01.html">
+                <a href="set-01.html">
             
                     
                     rzsz
@@ -605,7 +605,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >react-router相关</a>
+        <a href=".." >配置</a>
     </h1>
 </div>
 
@@ -620,70 +620,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="react-router-4x">react-router-4.x</h1>
-<h2 id="react-router-&#x4E2D;&#x4F7F;&#x7528;-javascript&#x63A7;&#x5236;&#x8DEF;&#x7531;&#x8DF3;&#x8F6C;">react-router &#x4E2D;&#x4F7F;&#x7528; javascript&#x63A7;&#x5236;&#x8DEF;&#x7531;&#x8DF3;&#x8F6C;</h2>
-<ul>
-<li>&#x4F7F;&#x7528; withRouter &#x9AD8;&#x9636;&#x7EC4;&#x4EF6;</li>
-<li>&#x4F7F;&#x7528; history&#x5E93;</li>
-<li>context &#x4E0A;&#x4E0B;&#x6587;</li>
-</ul>
-<h3 id="&#x4F7F;&#x7528;-withrouter-&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;">&#x4F7F;&#x7528; withRouter &#x9AD8;&#x9636;&#x7EC4;&#x4EF6;</h3>
-<p>&#x4F7F;&#x7528; BrowserRouter &#x65B9;&#x5F0F;&#x65F6;,&#x4F7F;&#x7528; withRouter&#x5BF9;&#x7EC4;&#x4EF6;&#x8FDB;&#x884C;&#x5305;&#x88F9;&#xFF0C;history &#x4F1A;&#x6302;&#x8F7D;&#x5728;props&#x4E0A;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;react&quot;</span>;
-<span class="hljs-keyword">import</span> { withRouter } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-router&apos;</span>;
-<span class="hljs-keyword">import</span> { BrowserRouter <span class="hljs-keyword">as</span> Router, Route, Link } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;react-router-dom&quot;</span>;
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Com</span>  <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
-  ...
-  routerCtrl() {
-    <span class="hljs-keyword">this</span>.props.history.push(<span class="hljs-string">&quot;/xxx/yyy&quot;</span>);
-  }
-  ...
-}
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> withRouter(Com);
-</code></pre>
-<h3 id="&#x4F7F;&#x7528;-history&#x5E93;">&#x4F7F;&#x7528; history&#x5E93;</h3>
-<p>&#x4F7F;&#x7528; Router&#x65F6;, &#x624B;&#x52A8;&#x6307;&#x5B9A; history</p>
-<pre><code class="lang-js">
-<span class="hljs-comment">//project-history.js &#x521B;&#x5EFA;history</span>
-<span class="hljs-keyword">import</span> createHistory <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;history/createBrowserHistory&apos;</span>;
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> createHistory();
-
-<span class="hljs-comment">//&#x8DEF;&#x7531;&#x6DFB;&#x52A0;</span>
-<span class="hljs-keyword">import</span> history <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./project-history.js&apos;</span>;
-<span class="hljs-keyword">import</span> {Router, Route, Link } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;react-router-dom&quot;</span>;
-
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Router</span> <span class="hljs-attr">history</span>=<span class="hljs-string">{history}</span>&gt;</span>
-...
-<span class="hljs-tag">&lt;/<span class="hljs-name">Router</span>&gt;</span></span>
-
-
-<span class="hljs-comment">//&#x7EC4;&#x4EF6;&#x5185;&#x90E8;&#x5F15;&#x5165;&#x6307;&#x5B9A;&#x7684;history, &#x7136;&#x540E;&#x76F4;&#x63A5;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x5373;&#x53EF;</span>
-<span class="hljs-keyword">import</span> history <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./project-history.js&apos;</span>;
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Com</span>  <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
-  ...
-  routerCtrl() {
-    history.push(<span class="hljs-string">&quot;/xxx/yyy&quot;</span>);
-  }
-  ...
-}
-</code></pre>
-<h3 id="context-&#x4E0A;&#x4E0B;&#x6587;">context &#x4E0A;&#x4E0B;&#x6587;</h3>
-<p>react-router v4 &#x901A;&#x8FC7;Contex&#x66B4;&#x9732;&#x4E86;&#x4E00;&#x4E2A;router&#x5BF9;&#x8C61;&#x7ED9;&#x6240;&#x6709;&#x7EC4;&#x4EF6;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> PropTypes <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;prop-types&apos;</span>
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Com</span>  <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
-
-  <span class="hljs-keyword">static</span> contextTypes = {
-      router:  PropTypes.Object
-  }
-  ...
-  routerCtrl() {
-    <span class="hljs-comment">//&#x76F4;&#x63A5;&#x4ECE;&#x4E0A;&#x4E0B;&#x6587;&#x4E0A;&#x8FDB;&#x884C;&#x8BBF;&#x95EE;&#x5373;&#x53EF;</span>
-    <span class="hljs-keyword">this</span>.context.router.history.push(<span class="hljs-string">&quot;/xxx/yyy&quot;</span>);
-  }
-  ...
-}
-</code></pre>
+                                <h1 id="&#x914D;&#x7F6E;&#x76F8;&#x5173;">&#x914D;&#x7F6E;&#x76F8;&#x5173;</h1>
 
                                 
                                 </section>
@@ -711,12 +648,12 @@
 
             
                 
-                <a href="react-server.html" class="navigation navigation-prev " aria-label="Previous page: react服务端渲染">
+                <a href="../node/cc.html" class="navigation navigation-prev " aria-label="Previous page: C++">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="react-hooks.html" class="navigation navigation-next " aria-label="Next page: react Hooks">
+                <a href="set-01.html" class="navigation navigation-next " aria-label="Next page: rzsz">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -727,7 +664,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"react-router相关","level":"1.4.4","depth":2,"next":{"title":"react Hooks","level":"1.4.5","depth":2,"path":"react/react-hooks.md","ref":"react/react-hooks.md","articles":[]},"previous":{"title":"react服务端渲染","level":"1.4.3","depth":2,"path":"react/react-server.md","ref":"react/react-server.md","articles":[]},"dir":"ltr"},"config":{"plugins":["multipart","copy-code-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"multipart":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ys","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"一波流","gitbook":"*"},"file":{"path":"react/react-router.md","mtime":"2018-04-21T03:34:19.813Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-17T09:59:39.618Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"配置","level":"1.11","depth":1,"next":{"title":"rzsz","level":"1.11.1","depth":2,"path":"set/set-01.md","ref":"set/set-01.md","articles":[]},"previous":{"title":"C++","level":"1.10.2","depth":2,"path":"node/cc.md","ref":"node/cc.md","articles":[]},"dir":"ltr"},"config":{"plugins":["multipart","copy-code-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"multipart":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ys","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"一波流","gitbook":"*"},"file":{"path":"set/README.md","mtime":"2019-01-17T09:48:34.358Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-17T09:59:39.618Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

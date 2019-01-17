@@ -6,7 +6,7 @@
     * [header](http/http-01.md)
 
 * [AST](ast/README.md)
-    * [babel](ast/ast-01.md)
+    * [ast](ast/ast-01.md)
 
 * [React](react/README.md)
     * [redux中间件](react/redux-middleware.md)
@@ -37,4 +37,9 @@
 * [Node](node/README.md)
     * [事件循环](node/event-loop.md)
     * [C++](node/cc.md)
-   
+  
+* [配置](set/README.md)
+    * [rzsz](set/set-01.md)
+
+* [数据库](database/README.md)
+    * [mongodb](datbase/01.md)
