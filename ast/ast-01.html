@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Node · 一波流</title>
+        <title>babel · 一波流</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="event-loop.html" />
+    <link rel="next" href="../react/README.md" />
     
     
-    <link rel="prev" href="../debug/mobile-debug.html" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -138,9 +138,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="../ast/">
+        <li class="chapter " data-level="1.3" data-path="./">
             
-                <a href="../ast/">
+                <a href="./">
             
                     
                     AST
@@ -152,9 +152,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="../ast/ast-01.html">
+        <li class="chapter active" data-level="1.3.1" data-path="ast-01.html">
             
-                <a href="../ast/ast-01.html">
+                <a href="ast-01.html">
             
                     
                     babel
@@ -466,9 +466,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.10" data-path="./">
+        <li class="chapter " data-level="1.10" data-path="../node/">
             
-                <a href="./">
+                <a href="../node/">
             
                     
                     Node
@@ -480,9 +480,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.10.1" data-path="event-loop.html">
+        <li class="chapter " data-level="1.10.1" data-path="../node/event-loop.html">
             
-                <a href="event-loop.html">
+                <a href="../node/event-loop.html">
             
                     
                     事件循环
@@ -493,9 +493,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.2" data-path="cc.html">
+        <li class="chapter " data-level="1.10.2" data-path="../node/cc.html">
             
-                <a href="cc.html">
+                <a href="../node/cc.html">
             
                     
                     C++
@@ -541,7 +541,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Node</a>
+        <a href=".." >babel</a>
     </h1>
 </div>
 
@@ -556,7 +556,119 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="node">node</h1>
+                                <h1 id="&#x57FA;&#x4E8E;babel&#x7684;ast&#x64CD;&#x4F5C;">&#x57FA;&#x4E8E;babel&#x7684;ast&#x64CD;&#x4F5C;</h1>
+<h2 id="&#x6587;&#x6863;">&#x6587;&#x6863;</h2>
+<p><a href="https://babeljs.io/docs" target="_blank">babel&#x6587;&#x6863;</a></p>
+<h2 id="&#x6838;&#x5FC3;&#x6A21;&#x5757;">&#x6838;&#x5FC3;&#x6A21;&#x5757;</h2>
+<ol>
+<li><code>@babel/core</code>      &#x6838;&#x5FC3;&#x6A21;&#x5757;</li>
+<li><code>@babel/types</code>     ast &#x7C7B;&#x578B;&#x6A21;&#x5757;</li>
+<li><code>@babel/traverse</code>  ast &#x904D;&#x5386;</li>
+<li><code>@babel/generator</code> ast&#x751F;&#x6210;code</li>
+<li><code>@babel/template</code>  &#x751F;&#x6210;ast</li>
+</ol>
+<h2 id="demo">demo</h2>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> babel = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;@babel/core&apos;</span>);
+<span class="hljs-keyword">const</span> types = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;@babel/types&apos;</span>);
+<span class="hljs-keyword">const</span> traverse = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;@babel/traverse&apos;</span>);
+<span class="hljs-keyword">const</span> gen = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;@babel/generator&apos;</span>);
+<span class="hljs-keyword">const</span> template = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;@babel/template&apos;</span>).default;
+
+
+<span class="hljs-keyword">let</span> code1 = <span class="hljs-string">`
+let fn = (a, b) =&gt; {
+
+      let result = a + b;
+    this.hello = &apos;world&apos;;
+    console.log(result);
+}
+`</span>;
+
+<span class="hljs-keyword">let</span> code2 = <span class="hljs-string">`let fn = function (a, b) {
+    return a + b;
+}`</span>;
+
+
+
+<span class="hljs-comment">//visitor</span>
+<span class="hljs-keyword">let</span> updateParamNameVisitor = {
+    Identifier: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">path, state</span>) </span>{
+        <span class="hljs-keyword">if</span> (path.node.name === <span class="hljs-keyword">this</span>.orgParamName1) {
+            path.node.name = <span class="hljs-string">&apos;aa&apos;</span>;
+        }
+
+        <span class="hljs-keyword">if</span> (path.node.name === <span class="hljs-keyword">this</span>.orgParamName2) {
+            path.node.name = <span class="hljs-string">&apos;bb&apos;</span>;
+        }
+    }
+};
+
+
+<span class="hljs-comment">//visitor</span>
+<span class="hljs-keyword">let</span> updateExpressionVisitor = {
+    BinaryExpression: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">path, state</span>) </span>{
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.needTrans &amp;&amp; (path.node.operator === <span class="hljs-string">&apos;+&apos;</span>)) {
+            path.node.left = types.identifier(<span class="hljs-string">&apos;aa&apos;</span>);
+            path.node.right = types.identifier(<span class="hljs-string">&apos;bb&apos;</span>);
+        }
+     }
+};
+
+
+<span class="hljs-comment">// babel.transform&#x63D2;&#x4EF6;</span>
+<span class="hljs-keyword">let</span> arrPlugin = {
+    visitor: {
+        ArrowFunctionExpression: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">path, state</span>) </span>{
+            <span class="hljs-comment">// console.log(path.node);</span>
+            <span class="hljs-comment">// console.log(&apos;params --&gt;&apos;, path.node.params);</span>
+
+            <span class="hljs-keyword">let</span> param1 = path.node.params[<span class="hljs-number">0</span>];
+            <span class="hljs-keyword">let</span> param2 = path.node.params[<span class="hljs-number">1</span>];
+            <span class="hljs-keyword">let</span> orgParamName1 = param1.name;
+            <span class="hljs-keyword">let</span> orgParamName2 = param2.name;
+
+            param1.name = <span class="hljs-string">&apos;aa&apos;</span>;
+            param2.name = <span class="hljs-string">&apos;bb&apos;</span>;
+
+
+            <span class="hljs-comment">//&#x4ECE;&#x67D0;&#x4E2A;&#x7C7B;&#x578B;&#x5224;&#x65AD;&#x4E2D; &#x8C03;&#x7528;&#x53E6;&#x5916;&#x7684;visitor</span>
+            path.traverse(updateParamNameVisitor, {paramName1: orgParamName1,  paramName2: orgParamName2});
+            path.traverse(updateExpressionVisitor, {needTrans: <span class="hljs-literal">true</span>});
+
+
+            <span class="hljs-comment">//&#x4F7F;&#x7528; @babel/template &#x6DFB;&#x52A0;&#x8282;&#x70B9;&#xFF0C;&#x8981;&#x65B9;&#x4FBF;&#x5F88;&#x591A;</span>
+            <span class="hljs-comment">// let buildRequire = template(`</span>
+            <span class="hljs-comment">//     var IMPORT_NAME = VALUE;</span>
+            <span class="hljs-comment">// `);</span>
+
+            <span class="hljs-comment">// let ast = buildRequire({</span>
+            <span class="hljs-comment">//     IMPORT_NAME: types.identifier(&apos;result&apos;),</span>
+            <span class="hljs-comment">//     VALUE: types.NumericLiteral(10)</span>
+            <span class="hljs-comment">// });</span>
+
+
+            <span class="hljs-keyword">let</span> ast = template.ast(<span class="hljs-string">`
+                var test = 10;
+            `</span>);
+
+            <span class="hljs-comment">//&#x6DFB;&#x52A0; ast</span>
+            path.get(<span class="hljs-string">&quot;body&quot;</span>).unshiftContainer(<span class="hljs-string">&quot;body&quot;</span>,  ast);
+
+            <span class="hljs-comment">//&#x7BAD;&#x5934;&#x51FD;&#x6570;&#x8F6C;&#x6362;</span>
+            path.arrowFunctionToShadowed();
+        }
+    }
+}
+
+<span class="hljs-keyword">let</span> result = babel.transformSync(code1, {
+    ast: <span class="hljs-literal">true</span>,
+    plugins: [arrPlugin]
+});
+
+
+<span class="hljs-comment">// console.log(JSON.stringify(result.ast, null, &apos;\t&apos;));</span>
+<span class="hljs-built_in">console</span>.log(result.code);
+</code></pre>
 
                                 
                                 </section>
@@ -584,12 +696,12 @@
 
             
                 
-                <a href="../debug/mobile-debug.html" class="navigation navigation-prev " aria-label="Previous page: 移动端调试">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: AST">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="event-loop.html" class="navigation navigation-next " aria-label="Next page: 事件循环">
+                <a href="../react/README.md" class="navigation navigation-next " aria-label="Next page: React">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -600,7 +712,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Node","level":"1.10","depth":1,"next":{"title":"事件循环","level":"1.10.1","depth":2,"path":"node/event-loop.md","ref":"node/event-loop.md","articles":[]},"previous":{"title":"移动端调试","level":"1.9.1","depth":2,"path":"debug/mobile-debug.md","ref":"debug/mobile-debug.md","articles":[]},"dir":"ltr"},"config":{"plugins":["multipart","copy-code-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"multipart":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ys","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"一波流","gitbook":"*"},"file":{"path":"node/README.md","mtime":"2018-12-04T02:31:48.917Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-17T06:13:13.882Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"babel","level":"1.3.1","depth":2,"next":{"title":"React","level":"1.4","depth":1,"path":"react/README.md","ref":"react/README.md","articles":[{"title":"redux中间件","level":"1.4.1","depth":2,"path":"react/redux-middleware.md","ref":"react/redux-middleware.md","articles":[]},{"title":"react组件动态加载","level":"1.4.2","depth":2,"path":"react/react-component.md","ref":"react/react-component.md","articles":[]},{"title":"react服务端渲染","level":"1.4.3","depth":2,"path":"react/react-server.md","ref":"react/react-server.md","articles":[]},{"title":"react-router相关","level":"1.4.4","depth":2,"path":"react/react-router.md","ref":"react/react-router.md","articles":[]},{"title":"react Hooks","level":"1.4.5","depth":2,"path":"react/react-hooks.md","ref":"react/react-hooks.md","articles":[]}]},"previous":{"title":"AST","level":"1.3","depth":1,"path":"ast/README.md","ref":"ast/README.md","articles":[{"title":"babel","level":"1.3.1","depth":2,"path":"ast/ast-01.md","ref":"ast/ast-01.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["multipart","copy-code-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"multipart":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ys","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"一波流","gitbook":"*"},"file":{"path":"ast/ast-01.md","mtime":"2019-01-17T06:12:41.806Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-17T06:13:13.882Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
