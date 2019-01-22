@@ -126,5 +126,7 @@ ios、android 播放video视频时，行为不一致，ios会打开新的窗口�
 使用 `video`的标签属性 `playsinline` 进行限制即可
 
 ```html
-    <video id="videoOne" controls webkit-playsinline="true" playsinline="true"  poster="./dist/img/xiangqing.png"  src="./dist/img/video.mp4"></video>
+    <video id="videoOne" controls 
+    webkit-playsinline="true" playsinline="true"  
+    poster="./dist/img/xiangqing.png"  src="./dist/img/video.mp4"></video>
 ```
