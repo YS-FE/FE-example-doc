@@ -622,11 +622,11 @@
                                 
                                 <h1 id="&#x63A7;&#x5236;&#x5149;&#x6807;&#x7684;&#x4F4D;&#x7F6E;">&#x63A7;&#x5236;&#x5149;&#x6807;&#x7684;&#x4F4D;&#x7F6E;</h1>
 <h2 id="&#x5BCC;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x65F6;&#xFF0C;&#x63A7;&#x5236;&#x5B57;&#x7B26;&#x4E2A;&#x6570;&#xFF0C;&#x63A7;&#x5236;&#x5149;&#x6807;&#x4F4D;&#x7F6E;">&#x5BCC;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x65F6;&#xFF0C;&#x63A7;&#x5236;&#x5B57;&#x7B26;&#x4E2A;&#x6570;&#xFF0C;&#x63A7;&#x5236;&#x5149;&#x6807;&#x4F4D;&#x7F6E;</h2>
-<pre><code class="lang-html">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;edit&quot;</span> <span class="hljs-attr">contenteditable</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<pre><code class="lang-html">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;editor&quot;</span> <span class="hljs-attr">contenteditable</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-<pre><code class="lang-js">        <span class="hljs-keyword">let</span> node = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;edit&apos;</span>);
+<pre><code class="lang-js">        <span class="hljs-keyword">let</span> node = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;editor&apos;</span>);
 
-        $(<span class="hljs-string">&quot;#edit&quot;</span>).on(<span class="hljs-string">&apos;input&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        $(<span class="hljs-string">&quot;#editor&quot;</span>).on(<span class="hljs-string">&apos;input&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
             <span class="hljs-keyword">let</span> temp = $(<span class="hljs-keyword">this</span>).text();
 
             <span class="hljs-keyword">if</span> (temp.length &gt; <span class="hljs-number">8</span>) {
@@ -634,16 +634,32 @@
 
                 <span class="hljs-keyword">var</span> sel = <span class="hljs-built_in">window</span>.getSelection();
                 <span class="hljs-keyword">var</span> range = <span class="hljs-built_in">document</span>.createRange();
-                range.selectNodeContents($(<span class="hljs-string">&apos;#edit&apos;</span>).get(<span class="hljs-number">0</span>)); <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x9009;&#x62E9;&#x8303;&#x56F4;</span>
+                range.selectNodeContents($(<span class="hljs-string">&apos;#editor&apos;</span>).get(<span class="hljs-number">0</span>)); <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x9009;&#x62E9;&#x8303;&#x56F4;</span>
 
                 <span class="hljs-comment">// range.setStart(node.childNodes[0], 0); //&#x8BBE;&#x7F6E;&#x8303;&#x56F4;</span>
                 <span class="hljs-comment">// range.setEnd(node.childNodes[0], 3);</span>
 
-                range.collapse(<span class="hljs-literal">false</span>);
+                range.collapse(<span class="hljs-literal">false</span>); <span class="hljs-comment">//&#x53C2;&#x6570;&#x4E3A;true&#x65F6;&#xFF0C;&#x6587;&#x672C;&#x4F1A;&#x5904;&#x4E8E;&#x9009;&#x4E2D;&#x7684;&#x72B6;&#x6001;!!!!</span>
                 sel.removeAllRanges();
                 sel.addRange(range); <span class="hljs-comment">// &#x622A;&#x53D6;&#x4E4B;&#x540E;&#x4FDD;&#x8BC1;&#x5149;&#x6807;&#x4ECD;&#x7136;&#x5728;&#x6700;&#x540E;</span>
             }
         })
+</code></pre>
+<h2 id="&#x5BCC;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x65F6;&#xFF0C;&#x63D2;&#x5165;&#x56FE;&#x7247;">&#x5BCC;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x65F6;&#xFF0C;&#x63D2;&#x5165;&#x56FE;&#x7247;</h2>
+<pre><code class="lang-html">  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;editor&quot;</span> <span class="hljs-attr">contenteditable</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-js">    <span class="hljs-keyword">var</span> selection = <span class="hljs-built_in">window</span>.getSelection();
+    <span class="hljs-keyword">var</span> currRange;
+
+    <span class="hljs-keyword">if</span> (selection.rangeCount) {
+        currentRange = selection.getRangeAt(<span class="hljs-number">0</span>);
+    }
+
+    <span class="hljs-keyword">var</span> img = <span class="hljs-keyword">new</span> Image();
+    img.src = <span class="hljs-string">&quot;dist/img/ding@3x.png&quot;</span>;
+
+    <span class="hljs-comment">// this.currentRange.insertNode(document.createTextNode(&quot;^_^&quot;));</span>
+    currentRange.insertNode(img);
 </code></pre>
 
                                 
@@ -688,7 +704,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"光标","level":"1.6.2","depth":2,"next":{"title":"水印","level":"1.6.3","depth":2,"path":"base/watermark.md","ref":"base/watermark.md","articles":[]},"previous":{"title":"base","level":"1.6.1","depth":2,"path":"base/base.md","ref":"base/base.md","articles":[]},"dir":"ltr"},"config":{"plugins":["multipart","copy-code-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"multipart":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ys","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"一波流","gitbook":"*"},"file":{"path":"base/cursor.md","mtime":"2018-12-25T02:19:01.897Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-22T03:22:38.406Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"光标","level":"1.6.2","depth":2,"next":{"title":"水印","level":"1.6.3","depth":2,"path":"base/watermark.md","ref":"base/watermark.md","articles":[]},"previous":{"title":"base","level":"1.6.1","depth":2,"path":"base/base.md","ref":"base/base.md","articles":[]},"dir":"ltr"},"config":{"plugins":["multipart","copy-code-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"multipart":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ys","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"一波流","gitbook":"*"},"file":{"path":"base/cursor.md","mtime":"2019-01-25T06:22:50.866Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-25T06:23:19.223Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
