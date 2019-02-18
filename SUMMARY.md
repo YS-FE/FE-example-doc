@@ -24,6 +24,7 @@
     * [光标](base/cursor.md)
     * [水印](base/watermark.md)
     * [video](base/video.md)
+    * [EventSource](base/eventSource.md)
 
 * [CSS](css/README.md)
     * [特性](css/css-01.md)
