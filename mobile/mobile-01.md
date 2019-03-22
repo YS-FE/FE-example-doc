@@ -57,6 +57,8 @@ body.has-mask {
 
 
     let startY = endY = 0;
+
+    //scrollEle 滚动的元素
     scrollEle.addEventListener('touchstart', funtion(event){
         if (event.targetTouches.length == 1) {
             starY = event.targetTouches[0].clientY;
