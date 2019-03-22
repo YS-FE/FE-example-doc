@@ -36,8 +36,58 @@ body.has-mask {
 ```
 
 
+## 2.弹层滚动穿透问题
+解决方案：阻止`document`的滚动，只允许需要滚动的元素进行滚动
 
-## 2. H5页面，虚拟键盘消失后底部留白问题
+```js
+
+    let canScrollElems = [];
+    document.addEventListener('touchmove', function(event){
+
+        //只允许其中可以滚动的元素进行滚动
+        let canScroll = canScrollElems.find(el => {
+            return event.target == el ;
+        });
+        if (canScroll) return;
+
+        event.preventDefault();
+    }, {
+        passive: false
+    });
+
+
+    let startY = endY = 0;
+    scrollEle.addEventListener('touchstart', funtion(event){
+        if (event.targetTouches.length == 1) {
+            starY = event.targetTouches[0].clientY;
+        }
+    });
+
+    scrollEle.addEventListener('touchmove', funtion(event){
+
+        if (event.targetTouches.length == 1) {
+            endY = event.targetTouches[0].clientY;
+            let result = endY - starY;
+
+            // 滚动到底部, 取消默认行为
+            if ((this.scrollTop + this.clientHeight >= this.scrollHeight)  &&  (result <= 0)) {
+                event.preventDefault();
+                return;
+            } 
+
+            // 滚动到顶部, 取消默认行为
+            if ((this.scrollTop <= 0)  &&  (result >= 0)) {
+                event.preventDefault();
+                return;
+            } 
+        }
+    });
+
+```
+
+
+
+## 3. H5页面，虚拟键盘消失后底部留白问题
 虚拟键盘输入完成之后，键盘收起之后，部分机型出现，底部留白问题。    
 
 解决方法: 
@@ -83,7 +133,7 @@ window.onresize = function() {
 
 
 
-## 2. 阻止 ios 橡皮筋效果
+## 4. 阻止 ios 橡皮筋效果
 解决方法: 滚到到阈值时，禁止触摸的默认行为即可，但是需要 传递`passive: false`参数
 
 ```js
@@ -121,7 +171,7 @@ window.onresize = function() {
 ```
 
 
-## 3. video的局部播放
+## 5. video的局部播放
 ios、android 播放video视频时，行为不一致，ios会打开新的窗口进行播放。     
 使用 `video`的标签属性 `playsinline` 进行限制即可
 
