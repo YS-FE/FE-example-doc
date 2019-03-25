@@ -207,6 +207,61 @@ iphonex 参数
 
 ```
 
+## css 混合
+
+[大神demo链接](http://link.zhihu.com/?target=https%3A//www.cnblogs.com/coco1s/p/8080211.html)    
+[参考链接](https://zhuanlan.zhihu.com/p/42631537)
+
+```css
+
+.default-img {
+    width: 200px;
+    height: 200px;
+    background-image: url('./xx.png');
+    background-size: cover;
+}
+ 
+.red-img {
+    background-image: url('./xx.png'), linear-gradient(#f00, #f00);
+    background-blend-mode: lighten; //将图片和 渐变进行混合
+    background-size: cover;
+}
+
+```
+
+
+## img 响应式图片加载
+[img 属性链接](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img)       
+[response image demo 链接](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
+
+```html
+<!-- 
+    320w, 'w'标识图片的实际宽度，不是像素
+    sizes, 根据viewport的宽度，控制img的宽度（如果img设置了css width,那么 sizes会失效）
+ -->
+
+<img srcset="elva-fairy-320w.jpg 320w,
+             elva-fairy-480w.jpg 480w,
+             elva-fairy-800w.jpg 800w"
+     sizes="(max-width: 320px) 280px,
+            (max-width: 480px) 440px,
+            800px"
+     src="elva-fairy-800w.jpg" alt="Elva dressed as a fairy">
+
+```
+
+
+```html
+
+<picture>
+  <source media="(max-width: 799px)" srcset="elva-480w-close-portrait.jpg">
+  <source media="(min-width: 800px)" srcset="elva-800w.jpg">
+  <img src="elva-800w.jpg" alt="Chris standing up holding his daughter Elva">
+</picture>
+
+```
+
+
 
 
 

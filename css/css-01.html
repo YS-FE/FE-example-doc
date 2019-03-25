@@ -778,7 +778,45 @@ var &#x83B7;&#x53D6;css&#x53D8;&#x91CF;&#x503C;, &#x5B9A;&#x4E49;&#x65F6;&#x9700
 &#x5C4F;&#x5E55;&#x5BBD;&#x5EA6; 375   &#x9AD8;&#x5EA6; 812
 &#x6D4F;&#x89C8;&#x5668;&#x53EF;&#x89C6;&#x9AD8;&#x5EA6; 724  &#x9876;&#x90E8;&#x680F; 88
 &#x5E95;&#x90E8;&#x5B89;&#x5168;&#x8DDD;&#x79BB; 34
+</code></pre><h2 id="css-&#x6DF7;&#x5408;">css &#x6DF7;&#x5408;</h2>
+<p><a href="http://link.zhihu.com/?target=https%3A//www.cnblogs.com/coco1s/p/8080211.html" target="_blank">&#x5927;&#x795E;demo&#x94FE;&#x63A5;</a><br><a href="https://zhuanlan.zhihu.com/p/42631537" target="_blank">&#x53C2;&#x8003;&#x94FE;&#x63A5;</a></p>
+<pre><code class="lang-css">
+.default-img {
+    width: 200px;
+    height: 200px;
+    background-image: url(&apos;./xx.png&apos;);
+    background-size: cover;
+}
+
+.red-img {
+    background-image: url(&apos;./xx.png&apos;), linear-gradient(#f00, #f00);
+    background-blend-mode: lighten; //&#x5C06;&#x56FE;&#x7247;&#x548C; &#x6E10;&#x53D8;&#x8FDB;&#x884C;&#x6DF7;&#x5408;
+    background-size: cover;
+}
 </code></pre>
+<h2 id="img-&#x54CD;&#x5E94;&#x5F0F;&#x56FE;&#x7247;&#x52A0;&#x8F7D;">img &#x54CD;&#x5E94;&#x5F0F;&#x56FE;&#x7247;&#x52A0;&#x8F7D;</h2>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img" target="_blank">img &#x5C5E;&#x6027;&#x94FE;&#x63A5;</a><br><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images" target="_blank">response image demo &#x94FE;&#x63A5;</a></p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- 
+    320w, &apos;w&apos;&#x6807;&#x8BC6;&#x56FE;&#x7247;&#x7684;&#x5B9E;&#x9645;&#x5BBD;&#x5EA6;&#xFF0C;&#x4E0D;&#x662F;&#x50CF;&#x7D20;
+    sizes, &#x6839;&#x636E;viewport&#x7684;&#x5BBD;&#x5EA6;&#xFF0C;&#x63A7;&#x5236;img&#x7684;&#x5BBD;&#x5EA6;&#xFF08;&#x5982;&#x679C;img&#x8BBE;&#x7F6E;&#x4E86;css width,&#x90A3;&#x4E48; sizes&#x4F1A;&#x5931;&#x6548;&#xFF09;
+ --&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">&quot;elva-fairy-320w.jpg 320w,
+             elva-fairy-480w.jpg 480w,
+             elva-fairy-800w.jpg 800w&quot;</span>
+     <span class="hljs-attr">sizes</span>=<span class="hljs-string">&quot;(max-width: 320px) 280px,
+            (max-width: 480px) 440px,
+            800px&quot;</span>
+     <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;elva-fairy-800w.jpg&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;Elva dressed as a fairy&quot;</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-html">
+<span class="hljs-tag">&lt;<span class="hljs-name">picture</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">media</span>=<span class="hljs-string">&quot;(max-width: 799px)&quot;</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">&quot;elva-480w-close-portrait.jpg&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">media</span>=<span class="hljs-string">&quot;(min-width: 800px)&quot;</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">&quot;elva-800w.jpg&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;elva-800w.jpg&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;Chris standing up holding his daughter Elva&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">picture</span>&gt;</span>
+</code></pre>
+
                                 
                                 </section>
                             
@@ -821,7 +859,7 @@ var &#x83B7;&#x53D6;css&#x53D8;&#x91CF;&#x503C;, &#x5B9A;&#x4E49;&#x65F6;&#x9700
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"特性","level":"1.7.1","depth":2,"next":{"title":"Mobile","level":"1.8","depth":1,"path":"mobile/README.md","ref":"mobile/README.md","articles":[{"title":"常见问题","level":"1.8.1","depth":2,"path":"mobile/mobile-01.md","ref":"mobile/mobile-01.md","articles":[]}]},"previous":{"title":"CSS","level":"1.7","depth":1,"path":"css/README.md","ref":"css/README.md","articles":[{"title":"特性","level":"1.7.1","depth":2,"path":"css/css-01.md","ref":"css/css-01.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["multipart","copy-code-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"multipart":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ys","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"一波流","gitbook":"*"},"file":{"path":"css/css-01.md","mtime":"2019-01-12T05:37:53.765Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-22T11:47:43.555Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"特性","level":"1.7.1","depth":2,"next":{"title":"Mobile","level":"1.8","depth":1,"path":"mobile/README.md","ref":"mobile/README.md","articles":[{"title":"常见问题","level":"1.8.1","depth":2,"path":"mobile/mobile-01.md","ref":"mobile/mobile-01.md","articles":[]}]},"previous":{"title":"CSS","level":"1.7","depth":1,"path":"css/README.md","ref":"css/README.md","articles":[{"title":"特性","level":"1.7.1","depth":2,"path":"css/css-01.md","ref":"css/css-01.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["multipart","copy-code-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"multipart":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ys","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"一波流","gitbook":"*"},"file":{"path":"css/css-01.md","mtime":"2019-03-25T07:59:47.770Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-25T07:59:59.637Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
