@@ -24,6 +24,7 @@
     * [光标](base/cursor.md)
     * [水印](base/watermark.md)
     * [video](base/video.md)
+    * [pic-in-pic](base/video-02.md)
     * [EventSource](base/eventSource.md)
 
 * [CSS](css/README.md)

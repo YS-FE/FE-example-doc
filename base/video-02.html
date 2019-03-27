@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>配置 · 一波流</title>
+        <title>pic-in-pic · 一波流</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="set-01.html" />
+    <link rel="next" href="eventSource.html" />
     
     
-    <link rel="prev" href="../node/cc.html" />
+    <link rel="prev" href="video.html" />
     
 
     </head>
@@ -299,9 +299,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="../base/">
+        <li class="chapter " data-level="1.6" data-path="./">
             
-                <a href="../base/">
+                <a href="./">
             
                     
                     Base
@@ -313,9 +313,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="../base/base.html">
+        <li class="chapter " data-level="1.6.1" data-path="base.html">
             
-                <a href="../base/base.html">
+                <a href="base.html">
             
                     
                     base
@@ -326,9 +326,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.2" data-path="../base/cursor.html">
+        <li class="chapter " data-level="1.6.2" data-path="cursor.html">
             
-                <a href="../base/cursor.html">
+                <a href="cursor.html">
             
                     
                     光标
@@ -339,9 +339,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.3" data-path="../base/watermark.html">
+        <li class="chapter " data-level="1.6.3" data-path="watermark.html">
             
-                <a href="../base/watermark.html">
+                <a href="watermark.html">
             
                     
                     水印
@@ -352,9 +352,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.4" data-path="../base/video.html">
+        <li class="chapter " data-level="1.6.4" data-path="video.html">
             
-                <a href="../base/video.html">
+                <a href="video.html">
             
                     
                     video
@@ -365,9 +365,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.5" data-path="../base/video-02.html">
+        <li class="chapter active" data-level="1.6.5" data-path="video-02.html">
             
-                <a href="../base/video-02.html">
+                <a href="video-02.html">
             
                     
                     pic-in-pic
@@ -378,9 +378,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.6" data-path="../base/eventSource.html">
+        <li class="chapter " data-level="1.6.6" data-path="eventSource.html">
             
-                <a href="../base/eventSource.html">
+                <a href="eventSource.html">
             
                     
                     EventSource
@@ -537,9 +537,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.11" data-path="./">
+        <li class="chapter " data-level="1.11" data-path="../set/">
             
-                <a href="./">
+                <a href="../set/">
             
                     
                     配置
@@ -551,9 +551,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.11.1" data-path="set-01.html">
+        <li class="chapter " data-level="1.11.1" data-path="../set/set-01.html">
             
-                <a href="set-01.html">
+                <a href="../set/set-01.html">
             
                     
                     rzsz
@@ -631,7 +631,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >配置</a>
+        <a href=".." >pic-in-pic</a>
     </h1>
 </div>
 
@@ -646,7 +646,52 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x914D;&#x7F6E;&#x76F8;&#x5173;">&#x914D;&#x7F6E;&#x76F8;&#x5173;</h1>
+                                <h2 id="picture-in-picture">picture-in-picture</h2>
+<p><a href="https://wicg.github.io/picture-in-picture/" target="_blank">w3c &#x76F8;&#x5173;&#x6587;&#x6863;</a>   </p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;ie=edge&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">video</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;video&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;400&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./video.mp4&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;togglePipButton&quot;</span>&gt;</span>toggle<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">const</span> video = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;video&apos;</span>);
+    <span class="hljs-keyword">const</span> togglePipButton = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;togglePipButton&apos;</span>);
+
+    <span class="hljs-comment">// Hide button if Picture-in-Picture is not supported or disabled.</span>
+    togglePipButton.hidden = !<span class="hljs-built_in">document</span>.pictureInPictureEnabled ||
+      video.disablePictureInPicture;
+
+    togglePipButton.addEventListener(<span class="hljs-string">&apos;click&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+      <span class="hljs-comment">// If there is no element in Picture-in-Picture yet, let&#x2019;s request</span>
+      <span class="hljs-comment">// Picture-in-Picture for the video, otherwise leave it.</span>
+      <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">document</span>.pictureInPictureElement) {
+        video.requestPictureInPicture()
+          .catch(error =&gt; {
+            <span class="hljs-comment">// Video failed to enter Picture-in-Picture mode.</span>
+          });
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">document</span>.exitPictureInPicture()
+          .catch(error =&gt; {
+            <span class="hljs-comment">// Video failed to leave Picture-in-Picture mode.</span>
+          });
+      }
+    });
+
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
 
                                 
                                 </section>
@@ -674,12 +719,12 @@
 
             
                 
-                <a href="../node/cc.html" class="navigation navigation-prev " aria-label="Previous page: C++">
+                <a href="video.html" class="navigation navigation-prev " aria-label="Previous page: video">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="set-01.html" class="navigation navigation-next " aria-label="Next page: rzsz">
+                <a href="eventSource.html" class="navigation navigation-next " aria-label="Next page: EventSource">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -690,7 +735,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"配置","level":"1.11","depth":1,"next":{"title":"rzsz","level":"1.11.1","depth":2,"path":"set/set-01.md","ref":"set/set-01.md","articles":[]},"previous":{"title":"C++","level":"1.10.2","depth":2,"path":"node/cc.md","ref":"node/cc.md","articles":[]},"dir":"ltr"},"config":{"plugins":["multipart","copy-code-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"multipart":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ys","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"一波流","gitbook":"*"},"file":{"path":"set/README.md","mtime":"2019-01-17T09:48:34.358Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-27T08:57:16.452Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"pic-in-pic","level":"1.6.5","depth":2,"next":{"title":"EventSource","level":"1.6.6","depth":2,"path":"base/eventSource.md","ref":"base/eventSource.md","articles":[]},"previous":{"title":"video","level":"1.6.4","depth":2,"path":"base/video.md","ref":"base/video.md","articles":[]},"dir":"ltr"},"config":{"plugins":["multipart","copy-code-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"multipart":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ys","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"一波流","gitbook":"*"},"file":{"path":"base/video-02.md","mtime":"2019-03-27T08:56:40.682Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-27T08:57:16.452Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
