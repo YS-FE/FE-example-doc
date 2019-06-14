@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>光标 · 一波流</title>
+        <title>常用模块 · 一波流</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="watermark.html" />
+    <link rel="next" href="event-loop.html" />
     
     
-    <link rel="prev" href="base.html" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -299,9 +299,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="./">
+        <li class="chapter " data-level="1.6" data-path="../base/">
             
-                <a href="./">
+                <a href="../base/">
             
                     
                     Base
@@ -313,9 +313,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="base.html">
+        <li class="chapter " data-level="1.6.1" data-path="../base/base.html">
             
-                <a href="base.html">
+                <a href="../base/base.html">
             
                     
                     base
@@ -326,9 +326,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6.2" data-path="cursor.html">
+        <li class="chapter " data-level="1.6.2" data-path="../base/cursor.html">
             
-                <a href="cursor.html">
+                <a href="../base/cursor.html">
             
                     
                     光标
@@ -339,9 +339,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.3" data-path="watermark.html">
+        <li class="chapter " data-level="1.6.3" data-path="../base/watermark.html">
             
-                <a href="watermark.html">
+                <a href="../base/watermark.html">
             
                     
                     水印
@@ -352,9 +352,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.4" data-path="video.html">
+        <li class="chapter " data-level="1.6.4" data-path="../base/video.html">
             
-                <a href="video.html">
+                <a href="../base/video.html">
             
                     
                     video
@@ -365,9 +365,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.5" data-path="video-02.html">
+        <li class="chapter " data-level="1.6.5" data-path="../base/video-02.html">
             
-                <a href="video-02.html">
+                <a href="../base/video-02.html">
             
                     
                     pic-in-pic
@@ -378,9 +378,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.6" data-path="eventSource.html">
+        <li class="chapter " data-level="1.6.6" data-path="../base/eventSource.html">
             
-                <a href="eventSource.html">
+                <a href="../base/eventSource.html">
             
                     
                     EventSource
@@ -492,9 +492,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10" data-path="../node/">
+        <li class="chapter " data-level="1.10" data-path="./">
             
-                <a href="../node/">
+                <a href="./">
             
                     
                     Node
@@ -506,9 +506,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.10.1" data-path="../node/common.html">
+        <li class="chapter active" data-level="1.10.1" data-path="common.html">
             
-                <a href="../node/common.html">
+                <a href="common.html">
             
                     
                     常用模块
@@ -519,9 +519,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.2" data-path="../node/event-loop.html">
+        <li class="chapter " data-level="1.10.2" data-path="event-loop.html">
             
-                <a href="../node/event-loop.html">
+                <a href="event-loop.html">
             
                     
                     事件循环
@@ -532,9 +532,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10.3" data-path="../node/cc.html">
+        <li class="chapter " data-level="1.10.3" data-path="cc.html">
             
-                <a href="../node/cc.html">
+                <a href="cc.html">
             
                     
                     C++
@@ -722,7 +722,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >光标</a>
+        <a href=".." >常用模块</a>
     </h1>
 </div>
 
@@ -737,65 +737,12 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x63A7;&#x5236;&#x5149;&#x6807;&#x7684;&#x4F4D;&#x7F6E;">&#x63A7;&#x5236;&#x5149;&#x6807;&#x7684;&#x4F4D;&#x7F6E;</h1>
-<h2 id="&#x5BCC;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x65F6;&#xFF0C;&#x63A7;&#x5236;&#x5B57;&#x7B26;&#x4E2A;&#x6570;&#xFF0C;&#x63A7;&#x5236;&#x5149;&#x6807;&#x4F4D;&#x7F6E;">&#x5BCC;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x65F6;&#xFF0C;&#x63A7;&#x5236;&#x5B57;&#x7B26;&#x4E2A;&#x6570;&#xFF0C;&#x63A7;&#x5236;&#x5149;&#x6807;&#x4F4D;&#x7F6E;</h2>
-<pre><code class="lang-html">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;editor&quot;</span> <span class="hljs-attr">contenteditable</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-</code></pre>
-<pre><code class="lang-js">        <span class="hljs-keyword">let</span> node = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;editor&apos;</span>);
-
-        $(<span class="hljs-string">&quot;#editor&quot;</span>).on(<span class="hljs-string">&apos;input&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-            <span class="hljs-keyword">let</span> temp = $(<span class="hljs-keyword">this</span>).text();
-
-            <span class="hljs-keyword">if</span> (temp.length &gt; <span class="hljs-number">8</span>) {
-                $(<span class="hljs-keyword">this</span>).text(temp.slice(<span class="hljs-number">0</span>, <span class="hljs-number">8</span>)); <span class="hljs-comment">//&#x622A;&#x53D6;&#x5B57;&#x7B26;</span>
-
-                <span class="hljs-keyword">var</span> sel = <span class="hljs-built_in">window</span>.getSelection();
-                <span class="hljs-keyword">var</span> range = <span class="hljs-built_in">document</span>.createRange();
-                range.selectNodeContents($(<span class="hljs-string">&apos;#editor&apos;</span>).get(<span class="hljs-number">0</span>)); <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x9009;&#x62E9;&#x8303;&#x56F4;</span>
-
-                <span class="hljs-comment">// range.setStart(node.childNodes[0], 0); //&#x8BBE;&#x7F6E;&#x8303;&#x56F4;</span>
-                <span class="hljs-comment">// range.setEnd(node.childNodes[0], 3);</span>
-
-                range.collapse(<span class="hljs-literal">false</span>); <span class="hljs-comment">//&#x53C2;&#x6570;&#x4E3A;true&#x65F6;&#xFF0C;&#x6587;&#x672C;&#x4F1A;&#x5904;&#x4E8E;&#x9009;&#x4E2D;&#x7684;&#x72B6;&#x6001;!!!!</span>
-                sel.removeAllRanges();
-                sel.addRange(range); <span class="hljs-comment">// &#x622A;&#x53D6;&#x4E4B;&#x540E;&#x4FDD;&#x8BC1;&#x5149;&#x6807;&#x4ECD;&#x7136;&#x5728;&#x6700;&#x540E;</span>
-            }
-        })
-</code></pre>
-<h2 id="&#x5BCC;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x65F6;&#xFF0C;&#x63D2;&#x5165;&#x56FE;&#x7247;">&#x5BCC;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x65F6;&#xFF0C;&#x63D2;&#x5165;&#x56FE;&#x7247;</h2>
-<pre><code class="lang-html">  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;editor&quot;</span> <span class="hljs-attr">contenteditable</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-</code></pre>
-<pre><code class="lang-js">    <span class="hljs-keyword">var</span> selection = <span class="hljs-built_in">window</span>.getSelection();
-    <span class="hljs-keyword">var</span> currRange;
-
-    <span class="hljs-keyword">if</span> (selection.rangeCount) {
-        currentRange = selection.getRangeAt(<span class="hljs-number">0</span>);
-
-        <span class="hljs-comment">//&#x5149;&#x6807;&#x5230;&#x672B;&#x5C3E;</span>
-        <span class="hljs-comment">// range.setStart(range.startContainer, textEle.length);</span>
-        <span class="hljs-comment">// range.setEnd(range.endContainer, textEle.length); </span>
-    }
-
-    <span class="hljs-keyword">var</span> img = <span class="hljs-keyword">new</span> Image();
-    img.src = <span class="hljs-string">&quot;dist/img/ding@3x.png&quot;</span>;
-
-    <span class="hljs-comment">// this.currentRange.insertNode(document.createTextNode(&quot;^_^&quot;));</span>
-    currentRange.insertNode(img);
-</code></pre>
-<h2 id="&#x83B7;&#x5F97;&#x5149;&#x6807;&#x4F4D;&#x7F6E;">&#x83B7;&#x5F97;&#x5149;&#x6807;&#x4F4D;&#x7F6E;</h2>
-<pre><code class="lang-js">    <span class="hljs-comment">//&#x83B7;&#x53D6;&#x5BCC;&#x6587;&#x672C;&#x6846;&#x4E2D;&#xFF0C;&#x5149;&#x6807;&#x7684;&#x5B57;&#x7B26;&#x4F4D;&#x7F6E;</span>
-    <span class="hljs-comment">// elem &#x4E3A; &#x5BCC;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;&#x672C;&#x8EAB;</span>
-    getCurrentCursorPos (elem) {
-        <span class="hljs-keyword">let</span> sel = <span class="hljs-built_in">window</span>.getSelection();
-        <span class="hljs-keyword">if</span> (sel.rangeCount &gt; <span class="hljs-number">0</span>) {<span class="hljs-comment">//&#x9009;&#x4E2D;&#x7684;&#x533A;&#x57DF;</span>
-            <span class="hljs-keyword">let</span> range = <span class="hljs-built_in">window</span>.getSelection().getRangeAt(<span class="hljs-number">0</span>);
-            <span class="hljs-keyword">let</span> preCaretRange = range.cloneRange();<span class="hljs-comment">//&#x514B;&#x9686;&#x4E00;&#x4E2A;&#x9009;&#x4E2D;&#x533A;&#x57DF;</span>
-            preCaretRange.selectNodeContents(elem);<span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x9009;&#x4E2D;&#x533A;&#x57DF;&#x7684;&#x8282;&#x70B9;&#x5185;&#x5BB9;&#x4E3A;&#x5F53;&#x524D;&#x8282;&#x70B9;</span>
-            preCaretRange.setEnd(range.endContainer, range.endOffset);  <span class="hljs-comment">//&#x91CD;&#x7F6E;&#x9009;&#x4E2D;&#x533A;&#x57DF;&#x7684;&#x7ED3;&#x675F;&#x4F4D;&#x7F6E;</span>
-            <span class="hljs-keyword">return</span> preCaretRange.toString().length;
-        }
-    }
-</code></pre>
+                                <h1 id="&#x5E38;&#x7528;&#x6A21;&#x5757;">&#x5E38;&#x7528;&#x6A21;&#x5757;</h1>
+<h2 id="compressing-&#x538B;&#x7F29;">compressing &#x538B;&#x7F29;</h2>
+<h2 id="mz&#x3001;-mz-modules----nodejs-api&#x5C01;&#x88C5;">mz&#x3001; mz-modules    nodejs API&#x5C01;&#x88C5;</h2>
+<h2 id="download--&#x4E0B;&#x8F7D;">download  &#x4E0B;&#x8F7D;</h2>
+<h2 id="decimaljs--&#x5C0F;&#x6570;&#x7CBE;&#x5EA6;">decimal.js  &#x5C0F;&#x6570;&#x7CBE;&#x5EA6;</h2>
+<h2 id="callapp-lib---h5-&#x5524;&#x8D77;app">callapp-lib   H5 &#x5524;&#x8D77;app</h2>
 
                                 
                                 </section>
@@ -823,12 +770,12 @@
 
             
                 
-                <a href="base.html" class="navigation navigation-prev " aria-label="Previous page: base">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Node">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="watermark.html" class="navigation navigation-next " aria-label="Next page: 水印">
+                <a href="event-loop.html" class="navigation navigation-next " aria-label="Next page: 事件循环">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -839,7 +786,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"光标","level":"1.6.2","depth":2,"next":{"title":"水印","level":"1.6.3","depth":2,"path":"base/watermark.md","ref":"base/watermark.md","articles":[]},"previous":{"title":"base","level":"1.6.1","depth":2,"path":"base/base.md","ref":"base/base.md","articles":[]},"dir":"ltr"},"config":{"plugins":["multipart","copy-code-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"multipart":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ys","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"一波流","gitbook":"*"},"file":{"path":"base/cursor.md","mtime":"2019-06-14T03:23:09.860Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-14T03:23:22.375Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"常用模块","level":"1.10.1","depth":2,"next":{"title":"事件循环","level":"1.10.2","depth":2,"path":"node/event-loop.md","ref":"node/event-loop.md","articles":[]},"previous":{"title":"Node","level":"1.10","depth":1,"path":"node/README.md","ref":"node/README.md","articles":[{"title":"常用模块","level":"1.10.1","depth":2,"path":"node/common.md","ref":"node/common.md","articles":[]},{"title":"事件循环","level":"1.10.2","depth":2,"path":"node/event-loop.md","ref":"node/event-loop.md","articles":[]},{"title":"C++","level":"1.10.3","depth":2,"path":"node/cc.md","ref":"node/cc.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["multipart","copy-code-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"multipart":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ys","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"一波流","gitbook":"*"},"file":{"path":"node/common.md","mtime":"2019-06-04T02:37:27.795Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-14T03:23:22.375Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

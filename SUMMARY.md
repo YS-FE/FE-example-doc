@@ -37,6 +37,7 @@
     * [移动端调试](debug/mobile-debug.md)
 
 * [Node](node/README.md)
+    * [常用模块](node/common.md)
     * [事件循环](node/event-loop.md)
     * [C++](node/cc.md)
   
