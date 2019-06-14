@@ -73,3 +73,59 @@
         }
     }
 ```
+
+
+```js
+    //input textarea  输入框
+    getCurrentCursorPos (elem) {
+        let cursorPos = 0;
+        if (document.selection) {//IE
+            let selectRange = document.selection.createRange();
+            selectRange.moveStart('character', -event.target.value.length);
+            cursorPos = selectRange.text.length;
+        } else if (event.target.selectionStart || event.target.selectionStart == '0') {
+            cursorPos = event.target.selectionStart;
+        }
+    }
+    
+```
+
+
+## 设置光标位置
+
+```js
+  //div 富文本
+  setCursorPos(editor, pos) {
+    range = document.createRange();//创建一个选中区域
+    range.selectNodeContents(editor);//选中节点的内容
+    if(editor.innerHTML.length > 0) {
+      range.setStart(editor.childNodes[0], pos); //设置光标起始为指定位置
+    }
+
+    range.collapse(true);       //设置选中区域为一个点
+    let selection = window.getSelection();//获取当前选中区域
+    selection.removeAllRanges();//移出所有的选中范围
+    selection.addRange(range);//添加新建的范围
+  }
+```
+
+
+```js
+
+    //input  textarea
+    setCursorPos(editor, pos) {
+        if(editor.setSelectionRange) {
+            // IE Support
+            editor.focus();
+            editor.setSelectionRange(pos, pos);
+        }else if (editor.createTextRange) {
+            // Firefox support
+            let range = editor.createTextRange();
+            range.collapse(true);
+            range.moveEnd('character', pos);
+            range.moveStart('character', pos);
+            range.select();
+        }
+    }
+
+```

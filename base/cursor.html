@@ -796,6 +796,50 @@
         }
     }
 </code></pre>
+<pre><code class="lang-js">    <span class="hljs-comment">//input textarea  &#x8F93;&#x5165;&#x6846;</span>
+    getCurrentCursorPos (elem) {
+        <span class="hljs-keyword">let</span> cursorPos = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">document</span>.selection) {<span class="hljs-comment">//IE</span>
+            <span class="hljs-keyword">let</span> selectRange = <span class="hljs-built_in">document</span>.selection.createRange();
+            selectRange.moveStart(<span class="hljs-string">&apos;character&apos;</span>, -event.target.value.length);
+            cursorPos = selectRange.text.length;
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (event.target.selectionStart || event.target.selectionStart == <span class="hljs-string">&apos;0&apos;</span>) {
+            cursorPos = event.target.selectionStart;
+        }
+    }
+</code></pre>
+<h2 id="&#x8BBE;&#x7F6E;&#x5149;&#x6807;&#x4F4D;&#x7F6E;">&#x8BBE;&#x7F6E;&#x5149;&#x6807;&#x4F4D;&#x7F6E;</h2>
+<pre><code class="lang-js">  <span class="hljs-comment">//div &#x5BCC;&#x6587;&#x672C;</span>
+  setCursorPos(editor, pos) {
+    range = <span class="hljs-built_in">document</span>.createRange();<span class="hljs-comment">//&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x9009;&#x4E2D;&#x533A;&#x57DF;</span>
+    range.selectNodeContents(editor);<span class="hljs-comment">//&#x9009;&#x4E2D;&#x8282;&#x70B9;&#x7684;&#x5185;&#x5BB9;</span>
+    <span class="hljs-keyword">if</span>(editor.innerHTML.length &gt; <span class="hljs-number">0</span>) {
+      range.setStart(editor.childNodes[<span class="hljs-number">0</span>], pos); <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x5149;&#x6807;&#x8D77;&#x59CB;&#x4E3A;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;</span>
+    }
+
+    range.collapse(<span class="hljs-literal">true</span>);       <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x9009;&#x4E2D;&#x533A;&#x57DF;&#x4E3A;&#x4E00;&#x4E2A;&#x70B9;</span>
+    <span class="hljs-keyword">let</span> selection = <span class="hljs-built_in">window</span>.getSelection();<span class="hljs-comment">//&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x9009;&#x4E2D;&#x533A;&#x57DF;</span>
+    selection.removeAllRanges();<span class="hljs-comment">//&#x79FB;&#x51FA;&#x6240;&#x6709;&#x7684;&#x9009;&#x4E2D;&#x8303;&#x56F4;</span>
+    selection.addRange(range);<span class="hljs-comment">//&#x6DFB;&#x52A0;&#x65B0;&#x5EFA;&#x7684;&#x8303;&#x56F4;</span>
+  }
+</code></pre>
+<pre><code class="lang-js">
+    <span class="hljs-comment">//input  textarea</span>
+    setCursorPos(editor, pos) {
+        <span class="hljs-keyword">if</span>(editor.setSelectionRange) {
+            <span class="hljs-comment">// IE Support</span>
+            editor.focus();
+            editor.setSelectionRange(pos, pos);
+        }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (editor.createTextRange) {
+            <span class="hljs-comment">// Firefox support</span>
+            <span class="hljs-keyword">let</span> range = editor.createTextRange();
+            range.collapse(<span class="hljs-literal">true</span>);
+            range.moveEnd(<span class="hljs-string">&apos;character&apos;</span>, pos);
+            range.moveStart(<span class="hljs-string">&apos;character&apos;</span>, pos);
+            range.select();
+        }
+    }
+</code></pre>
 
                                 
                                 </section>
@@ -839,7 +883,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"光标","level":"1.6.2","depth":2,"next":{"title":"水印","level":"1.6.3","depth":2,"path":"base/watermark.md","ref":"base/watermark.md","articles":[]},"previous":{"title":"base","level":"1.6.1","depth":2,"path":"base/base.md","ref":"base/base.md","articles":[]},"dir":"ltr"},"config":{"plugins":["multipart","copy-code-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"multipart":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ys","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"一波流","gitbook":"*"},"file":{"path":"base/cursor.md","mtime":"2019-06-14T03:23:09.860Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-14T03:23:22.375Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"光标","level":"1.6.2","depth":2,"next":{"title":"水印","level":"1.6.3","depth":2,"path":"base/watermark.md","ref":"base/watermark.md","articles":[]},"previous":{"title":"base","level":"1.6.1","depth":2,"path":"base/base.md","ref":"base/base.md","articles":[]},"dir":"ltr"},"config":{"plugins":["multipart","copy-code-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"multipart":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ys","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"一波流","gitbook":"*"},"file":{"path":"base/cursor.md","mtime":"2019-06-14T04:26:07.084Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-14T04:26:16.707Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
