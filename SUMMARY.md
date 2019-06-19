@@ -50,6 +50,7 @@
 
 * [Git](git/README.md)
     * [git](git/01.md)
+    * [manager account](git/02.md)
 
 
 * [ts](ts/README.md)
