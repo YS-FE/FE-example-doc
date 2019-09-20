@@ -25,7 +25,9 @@
     * [水印](base/watermark.md)
     * [video](base/video.md)
     * [pic-in-pic](base/video-02.md)
+    * [video Event](base/video-03.md)
     * [EventSource](base/eventSource.md)
+    
 
 * [CSS](css/README.md)
     * [特性](css/css-01.md)
@@ -58,3 +60,7 @@
 
 * [ts](ts/README.md)
     * [ts](git/01.md)
+
+
+* [regexp](regexp/README.md)
+    * [01](regexp/01.md)

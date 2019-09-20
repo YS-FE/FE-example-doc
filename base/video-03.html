@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Vue · 一波流</title>
+        <title>video Event · 一波流</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="vue-async-load.html" />
+    <link rel="next" href="eventSource.html" />
     
     
-    <link rel="prev" href="../react/react-hooks.html" />
+    <link rel="prev" href="video-02.html" />
     
 
     </head>
@@ -254,9 +254,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5" data-path="./">
+        <li class="chapter " data-level="1.5" data-path="../vue/">
             
-                <a href="./">
+                <a href="../vue/">
             
                     
                     Vue
@@ -268,9 +268,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="vue-async-load.html">
+        <li class="chapter " data-level="1.5.1" data-path="../vue/vue-async-load.html">
             
-                <a href="vue-async-load.html">
+                <a href="../vue/vue-async-load.html">
             
                     
                     vue组件异步加载
@@ -281,9 +281,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="vue-prop.html">
+        <li class="chapter " data-level="1.5.2" data-path="../vue/vue-prop.html">
             
-                <a href="vue-prop.html">
+                <a href="../vue/vue-prop.html">
             
                     
                     vue prop双向通信
@@ -299,9 +299,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="../base/">
+        <li class="chapter " data-level="1.6" data-path="./">
             
-                <a href="../base/">
+                <a href="./">
             
                     
                     Base
@@ -313,9 +313,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="../base/base.html">
+        <li class="chapter " data-level="1.6.1" data-path="base.html">
             
-                <a href="../base/base.html">
+                <a href="base.html">
             
                     
                     base
@@ -326,9 +326,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.2" data-path="../base/cursor.html">
+        <li class="chapter " data-level="1.6.2" data-path="cursor.html">
             
-                <a href="../base/cursor.html">
+                <a href="cursor.html">
             
                     
                     光标
@@ -339,9 +339,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.3" data-path="../base/watermark.html">
+        <li class="chapter " data-level="1.6.3" data-path="watermark.html">
             
-                <a href="../base/watermark.html">
+                <a href="watermark.html">
             
                     
                     水印
@@ -352,9 +352,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.4" data-path="../base/video.html">
+        <li class="chapter " data-level="1.6.4" data-path="video.html">
             
-                <a href="../base/video.html">
+                <a href="video.html">
             
                     
                     video
@@ -365,9 +365,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.5" data-path="../base/video-02.html">
+        <li class="chapter " data-level="1.6.5" data-path="video-02.html">
             
-                <a href="../base/video-02.html">
+                <a href="video-02.html">
             
                     
                     pic-in-pic
@@ -378,9 +378,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.6" data-path="../base/video-03.html">
+        <li class="chapter active" data-level="1.6.6" data-path="video-03.html">
             
-                <a href="../base/video-03.html">
+                <a href="video-03.html">
             
                     
                     video Event
@@ -391,9 +391,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.7" data-path="../base/eventSource.html">
+        <li class="chapter " data-level="1.6.7" data-path="eventSource.html">
             
-                <a href="../base/eventSource.html">
+                <a href="eventSource.html">
             
                     
                     EventSource
@@ -826,7 +826,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Vue</a>
+        <a href=".." >video Event</a>
     </h1>
 </div>
 
@@ -841,7 +841,27 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="vue&#x76F8;&#x5173;">vue&#x76F8;&#x5173;</h2>
+                                <h2 id="htmlmediaelement-&#x76F8;&#x5173;&#x4E8B;&#x4EF6;">HTMLMediaElement &#x76F8;&#x5173;&#x4E8B;&#x4EF6;</h2>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement" target="_blank">&#x4E8B;&#x4EF6;&#x94FE;&#x63A5;</a></p>
+<pre><code class="lang-js">HTMLMediaElement: playing event   &#x5F00;&#x59CB;&#x64AD;&#x653E;
+HTMLMediaElement: waiting event   &#x7B49;&#x5F85;&#x6570;&#x636E;
+HTMLMediaElement: seeking event   &#x8FDB;&#x5EA6;&#x6761;&#x62D6;&#x52A8;
+HTMLMediaElement: seeked event    &#x62D6;&#x52A8;&#x7ED3;&#x675F;
+HTMLMediaElement: ended event     &#x64AD;&#x653E;, &#x6D41;&#x7ED3;&#x675F;
+HTMLMediaElement: loadedmetadata event 
+HTMLMediaElement: loadeddata event
+HTMLMediaElement: canplay event
+HTMLMediaElement: canplaythrough event
+HTMLMediaElement: durationchange event
+HTMLMediaElement: timeupdate event
+HTMLMediaElement: play event
+HTMLMediaElement: pause event
+HTMLMediaElement: ratechange event   &#x901F;&#x7387;&#x6539;&#x53D8;
+HTMLMediaElement: volumechange event  &#x58F0;&#x97F3;&#x6539;&#x53D8;
+HTMLMediaElement: suspend event      
+HTMLMediaElement: emptied event
+HTMLMediaElement: stalled event
+</code></pre>
 
                                 
                                 </section>
@@ -869,12 +889,12 @@
 
             
                 
-                <a href="../react/react-hooks.html" class="navigation navigation-prev " aria-label="Previous page: react Hooks">
+                <a href="video-02.html" class="navigation navigation-prev " aria-label="Previous page: pic-in-pic">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="vue-async-load.html" class="navigation navigation-next " aria-label="Next page: vue组件异步加载">
+                <a href="eventSource.html" class="navigation navigation-next " aria-label="Next page: EventSource">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -885,7 +905,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Vue","level":"1.5","depth":1,"next":{"title":"vue组件异步加载","level":"1.5.1","depth":2,"path":"vue/vue-async-load.md","ref":"vue/vue-async-load.md","articles":[]},"previous":{"title":"react Hooks","level":"1.4.5","depth":2,"path":"react/react-hooks.md","ref":"react/react-hooks.md","articles":[]},"dir":"ltr"},"config":{"plugins":["multipart","copy-code-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"multipart":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ys","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"一波流","gitbook":"*"},"file":{"path":"vue/README.md","mtime":"2018-12-25T02:37:19.441Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-20T02:42:25.631Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"video Event","level":"1.6.6","depth":2,"next":{"title":"EventSource","level":"1.6.7","depth":2,"path":"base/eventSource.md","ref":"base/eventSource.md","articles":[]},"previous":{"title":"pic-in-pic","level":"1.6.5","depth":2,"path":"base/video-02.md","ref":"base/video-02.md","articles":[]},"dir":"ltr"},"config":{"plugins":["multipart","copy-code-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"multipart":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ys","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"一波流","gitbook":"*"},"file":{"path":"base/video-03.md","mtime":"2019-08-28T06:28:03.322Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-20T02:42:25.631Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
