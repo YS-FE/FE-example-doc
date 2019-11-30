@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>数据库 · 一波流</title>
+        <title>消息队列 · 一波流</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="01.html" />
+    <link rel="next" href="../electron/" />
     
     
-    <link rel="prev" href="../set/set-01.html" />
+    <link rel="prev" href="cc.html" />
     
 
     </head>
@@ -512,9 +512,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4" data-path="../node/">
+        <li class="chapter " data-level="2.4" data-path="./">
             
-                <a href="../node/">
+                <a href="./">
             
                     
                     Node
@@ -526,9 +526,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.4.1" data-path="../node/common.html">
+        <li class="chapter " data-level="2.4.1" data-path="common.html">
             
-                <a href="../node/common.html">
+                <a href="common.html">
             
                     
                     常用模块
@@ -539,9 +539,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4.2" data-path="../node/event-loop.html">
+        <li class="chapter " data-level="2.4.2" data-path="event-loop.html">
             
-                <a href="../node/event-loop.html">
+                <a href="event-loop.html">
             
                     
                     事件循环
@@ -552,9 +552,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4.3" data-path="../node/cc.html">
+        <li class="chapter " data-level="2.4.3" data-path="cc.html">
             
-                <a href="../node/cc.html">
+                <a href="cc.html">
             
                     
                     C++
@@ -565,9 +565,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4.4" data-path="../node/bull.html">
+        <li class="chapter active" data-level="2.4.4" data-path="bull.html">
             
-                <a href="../node/bull.html">
+                <a href="bull.html">
             
                     
                     消息队列
@@ -647,9 +647,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.6" data-path="./">
+        <li class="chapter " data-level="2.6" data-path="../database/">
             
-                <a href="./">
+                <a href="../database/">
             
                     
                     数据库
@@ -661,9 +661,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.6.1" data-path="01.html">
+        <li class="chapter " data-level="2.6.1" data-path="../database/01.html">
             
-                <a href="01.html">
+                <a href="../database/01.html">
             
                     
                     mongodb
@@ -839,7 +839,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >数据库</a>
+        <a href=".." >消息队列</a>
     </h1>
 </div>
 
@@ -854,7 +854,39 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x6570;&#x636E;&#x5E93;">&#x6570;&#x636E;&#x5E93;</h1>
+                                <h2 id="bull-&#x6D88;&#x606F;&#x961F;&#x5217;-for-nodejs">bull &#x6D88;&#x606F;&#x961F;&#x5217; for nodejs</h2>
+<p>&#x57FA;&#x4E8E;redis&#xFF0C;redis-server&#x9700;&#x542F;&#x52A8;</p>
+<h2 id="demo">demo</h2>
+<pre><code class="lang-js"><span class="hljs-comment">// server A</span>
+<span class="hljs-keyword">const</span> Queue = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;bull&apos;</span>);
+<span class="hljs-keyword">let</span> queueA = <span class="hljs-keyword">new</span> Queue(<span class="hljs-string">&quot;test-one&quot;</span>);
+
+setInterval(() =&gt; {
+    queueA.add(<span class="hljs-string">&apos;job1&apos;</span>, {msg: <span class="hljs-string">&apos;namedjob_&apos;</span> + <span class="hljs-built_in">Date</span>.now()});
+    queueA.add({msg: <span class="hljs-string">&apos;helloworld_&apos;</span> + <span class="hljs-built_in">Date</span>.now()});
+}, <span class="hljs-number">1000</span>);
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-comment">// server B</span>
+
+<span class="hljs-keyword">const</span> Queue = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;bull&apos;</span>);
+<span class="hljs-keyword">let</span> queueA = <span class="hljs-keyword">new</span> Queue(<span class="hljs-string">&quot;test-one&quot;</span>);
+
+queueA.process((job, Done) =&gt; {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;current job =  &quot;</span>, <span class="hljs-built_in">JSON</span>.stringify(job));
+    Done(<span class="hljs-literal">null</span>, <span class="hljs-string">&apos;ok&apos;</span>);
+});
+
+
+queueA.process(<span class="hljs-string">&apos;job1&apos;</span>, (job, Done) =&gt; {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;job1 =  &quot;</span>, <span class="hljs-built_in">JSON</span>.stringify(job));
+    Done(<span class="hljs-literal">null</span>, <span class="hljs-string">&apos;ok&apos;</span>);
+});
+
+
+queueA.on(<span class="hljs-string">&apos;completed&apos;</span>, (job, result) =&gt; {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;complete job = &apos;</span>, <span class="hljs-built_in">JSON</span>.stringify(job));
+});
+</code></pre>
 
                                 
                                 </section>
@@ -882,12 +914,12 @@
 
             
                 
-                <a href="../set/set-01.html" class="navigation navigation-prev " aria-label="Previous page: rzsz">
+                <a href="cc.html" class="navigation navigation-prev " aria-label="Previous page: C++">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="01.html" class="navigation navigation-next " aria-label="Next page: mongodb">
+                <a href="../electron/" class="navigation navigation-next " aria-label="Next page: Electron">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -898,7 +930,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"数据库","level":"2.6","depth":1,"next":{"title":"mongodb","level":"2.6.1","depth":2,"path":"database/01.md","ref":"database/01.md","articles":[]},"previous":{"title":"rzsz","level":"2.5.1","depth":2,"path":"set/set-01.md","ref":"set/set-01.md","articles":[]},"dir":"ltr"},"config":{"plugins":["multipart","copy-code-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"multipart":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ys","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"一波流","gitbook":"*"},"file":{"path":"database/README.md","mtime":"2019-01-17T09:57:13.619Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-30T07:14:25.523Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"消息队列","level":"2.4.4","depth":2,"next":{"title":"Electron","level":"2.4.5","depth":2,"path":"electron/README.md","ref":"electron/README.md","articles":[{"title":"常见问题","level":"2.4.5.1","depth":3,"path":"electron/01.md","ref":"electron/01.md","articles":[]}]},"previous":{"title":"C++","level":"2.4.3","depth":2,"path":"node/cc.md","ref":"node/cc.md","articles":[]},"dir":"ltr"},"config":{"plugins":["multipart","copy-code-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"multipart":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ys","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"一波流","gitbook":"*"},"file":{"path":"node/bull.md","mtime":"2019-11-30T07:13:28.368Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-30T07:14:25.523Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

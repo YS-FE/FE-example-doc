@@ -42,6 +42,7 @@
     * [常用模块](node/common.md)
     * [事件循环](node/event-loop.md)
     * [C++](node/cc.md)
+    * [消息队列](node/bull.md)
   
   * [Electron](electron/README.md)
     * [常见问题](electron/01.md)
