@@ -869,7 +869,13 @@ setInterval(() =&gt; {
 <pre><code class="lang-js"><span class="hljs-comment">// server B</span>
 
 <span class="hljs-keyword">const</span> Queue = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;bull&apos;</span>);
-<span class="hljs-keyword">let</span> queueA = <span class="hljs-keyword">new</span> Queue(<span class="hljs-string">&quot;test-one&quot;</span>);
+<span class="hljs-keyword">let</span> queueA = <span class="hljs-keyword">new</span> Queue(<span class="hljs-string">&quot;test-one&quot;</span>, {
+    limiter: {
+        <span class="hljs-comment">// &#x6700;&#x591A;&#x6BCF;5s &#x5904;&#x7406;1000&#x4E2A;</span>
+        max: <span class="hljs-number">1000</span>,
+        duration: <span class="hljs-number">5000</span>
+    }
+});
 
 queueA.process((job, Done) =&gt; {
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;current job =  &quot;</span>, <span class="hljs-built_in">JSON</span>.stringify(job));
@@ -930,7 +936,7 @@ queueA.on(<span class="hljs-string">&apos;completed&apos;</span>, (job, result) 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"消息队列","level":"2.4.4","depth":2,"next":{"title":"Electron","level":"2.4.5","depth":2,"path":"electron/README.md","ref":"electron/README.md","articles":[{"title":"常见问题","level":"2.4.5.1","depth":3,"path":"electron/01.md","ref":"electron/01.md","articles":[]}]},"previous":{"title":"C++","level":"2.4.3","depth":2,"path":"node/cc.md","ref":"node/cc.md","articles":[]},"dir":"ltr"},"config":{"plugins":["multipart","copy-code-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"multipart":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ys","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"一波流","gitbook":"*"},"file":{"path":"node/bull.md","mtime":"2019-11-30T07:13:28.368Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-30T07:14:25.523Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"消息队列","level":"2.4.4","depth":2,"next":{"title":"Electron","level":"2.4.5","depth":2,"path":"electron/README.md","ref":"electron/README.md","articles":[{"title":"常见问题","level":"2.4.5.1","depth":3,"path":"electron/01.md","ref":"electron/01.md","articles":[]}]},"previous":{"title":"C++","level":"2.4.3","depth":2,"path":"node/cc.md","ref":"node/cc.md","articles":[]},"dir":"ltr"},"config":{"plugins":["multipart","copy-code-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"multipart":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ys","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"一波流","gitbook":"*"},"file":{"path":"node/bull.md","mtime":"2019-11-30T09:06:39.955Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-23T12:18:05.573Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

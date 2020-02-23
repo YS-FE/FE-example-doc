@@ -189,3 +189,13 @@ document.addEventListener("visibilitychange", function() {
     }, true);
 
 ```
+
+## 5. 判断当前页面的来源
+  ```js
+  window.addEventListener('pageshow', (event) => {
+    // 比如判断当前页面是直接进入，还是返回进入
+    if (event.persisted || (window.performance && window.performance.navigation.type == 2)) {
+      // do sth
+    }
+  });
+  ```

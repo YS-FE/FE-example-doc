@@ -20,7 +20,13 @@ setInterval(() => {
 // server B
 
 const Queue = require('bull');
-let queueA = new Queue("test-one");
+let queueA = new Queue("test-one", {
+    limiter: {
+        // 最多每5s 处理1000个
+        max: 1000,
+        duration: 5000
+    }
+});
 
 queueA.process((job, Done) => {
     console.log("current job =  ", JSON.stringify(job));
