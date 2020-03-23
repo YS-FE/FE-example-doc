@@ -27,6 +27,7 @@
     * [pic-in-pic](base/video-02.md)
     * [video Event](base/video-03.md)
     * [EventSource](base/eventSource.md)
+    * [打印](base/print.md)
     
 
 * [CSS](css/README.md)

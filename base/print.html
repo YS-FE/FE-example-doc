@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>01 · 一波流</title>
+        <title>打印 · 一波流</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,8 +61,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="../css/" />
     
-    <link rel="prev" href="./" />
+    
+    <link rel="prev" href="eventSource.html" />
     
 
     </head>
@@ -297,9 +299,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="../base/">
+        <li class="chapter " data-level="1.6" data-path="./">
             
-                <a href="../base/">
+                <a href="./">
             
                     
                     Base
@@ -311,9 +313,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="../base/base.html">
+        <li class="chapter " data-level="1.6.1" data-path="base.html">
             
-                <a href="../base/base.html">
+                <a href="base.html">
             
                     
                     base
@@ -324,9 +326,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.2" data-path="../base/cursor.html">
+        <li class="chapter " data-level="1.6.2" data-path="cursor.html">
             
-                <a href="../base/cursor.html">
+                <a href="cursor.html">
             
                     
                     光标
@@ -337,9 +339,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.3" data-path="../base/watermark.html">
+        <li class="chapter " data-level="1.6.3" data-path="watermark.html">
             
-                <a href="../base/watermark.html">
+                <a href="watermark.html">
             
                     
                     水印
@@ -350,9 +352,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.4" data-path="../base/video.html">
+        <li class="chapter " data-level="1.6.4" data-path="video.html">
             
-                <a href="../base/video.html">
+                <a href="video.html">
             
                     
                     video
@@ -363,9 +365,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.5" data-path="../base/video-02.html">
+        <li class="chapter " data-level="1.6.5" data-path="video-02.html">
             
-                <a href="../base/video-02.html">
+                <a href="video-02.html">
             
                     
                     pic-in-pic
@@ -376,9 +378,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.6" data-path="../base/video-03.html">
+        <li class="chapter " data-level="1.6.6" data-path="video-03.html">
             
-                <a href="../base/video-03.html">
+                <a href="video-03.html">
             
                     
                     video Event
@@ -389,9 +391,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.7" data-path="../base/eventSource.html">
+        <li class="chapter " data-level="1.6.7" data-path="eventSource.html">
             
-                <a href="../base/eventSource.html">
+                <a href="eventSource.html">
             
                     
                     EventSource
@@ -402,9 +404,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.8" data-path="../base/print.html">
+        <li class="chapter active" data-level="1.6.8" data-path="print.html">
             
-                <a href="../base/print.html">
+                <a href="print.html">
             
                     
                     打印
@@ -788,9 +790,9 @@
         
         
     
-        <li class="chapter " data-level="5.1" data-path="./">
+        <li class="chapter " data-level="5.1" data-path="../regexp/">
             
-                <a href="./">
+                <a href="../regexp/">
             
                     
                     regexp
@@ -802,9 +804,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="5.1.1" data-path="01.html">
+        <li class="chapter " data-level="5.1.1" data-path="../regexp/01.html">
             
-                <a href="01.html">
+                <a href="../regexp/01.html">
             
                     
                     01
@@ -850,7 +852,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >01</a>
+        <a href=".." >打印</a>
     </h1>
 </div>
 
@@ -865,12 +867,78 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x6B63;&#x5219;">&#x6B63;&#x5219;</h1>
-<h2 id="&#x524D;&#x77BB;&#x540E;&#x987E;">&#x524D;&#x77BB;&#x540E;&#x987E;</h2>
-<pre><code class="lang-js"><span class="hljs-keyword">let</span> reg1 = <span class="hljs-regexp">/A(?=B)/</span>;  <span class="hljs-comment">//&#x67E5;&#x627E;&#x540E;&#x8FB9;&#x662F;B&#x7684;&#x7684;A</span>
-<span class="hljs-keyword">let</span> reg2 = <span class="hljs-regexp">/(?&lt;=A)B/</span>; <span class="hljs-comment">//&#x67E5;&#x627E;&#x524D;&#x8FB9;&#x662F;A&#x7684;B</span>
-<span class="hljs-keyword">let</span> reg3 = <span class="hljs-regexp">/A(?!B)/</span>;  <span class="hljs-comment">//&#x67E5;&#x627E;&#x540E;&#x8FB9;&#x4E0D;&#x662F;B&#x7684;A</span>
-<span class="hljs-keyword">let</span> reg4 = <span class="hljs-regexp">/(?&lt;!A)B/</span>; <span class="hljs-comment">//&#x67E5;&#x627E;&#x524D;&#x8FB9;&#x4E0D;&#x662F;A&#x7684;B</span>
+                                <h1 id="&#x6D4F;&#x89C8;&#x5668;&#x6253;&#x5370;">&#x6D4F;&#x89C8;&#x5668;&#x6253;&#x5370;</h1>
+<h2 id="vue-print-nb">vue-print-nb</h2>
+<h2 id="jqueryprintjs">jquery.print.js</h2>
+<pre><code class="lang-js">
+  jQuery(id).print({
+      noPrintSelector: <span class="hljs-string">&quot;.no-print&quot;</span>,
+      timeout: <span class="hljs-number">750</span>,
+  });
+</code></pre>
+<h2 id="&#x539F;&#x751F;js">&#x539F;&#x751F;js</h2>
+<pre><code class="lang-js">      print () {
+        <span class="hljs-keyword">let</span> frame = <span class="hljs-keyword">this</span>.appendFrame();
+
+        <span class="hljs-comment">// Safari</span>
+        <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">window</span>.onafterprint) {
+          <span class="hljs-comment">// emulate onbeforeprint/onafterprint events</span>
+          <span class="hljs-keyword">var</span> mediaQueryCallback = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">mql</span>) </span>{
+            <span class="hljs-keyword">if</span> (!mql.matches &amp;&amp; frame) {
+              <span class="hljs-built_in">document</span>.body.removeChild(frame);
+            }
+          };
+
+
+          <span class="hljs-keyword">let</span> mediaQueryList = <span class="hljs-built_in">window</span>.frames[frame.name].matchMedia(<span class="hljs-string">&apos;print&apos;</span>);
+          mediaQueryList.addListener(mediaQueryCallback);
+
+          <span class="hljs-comment">// the code below will trigger a cleanup in case a user hits Cancel button</span>
+          <span class="hljs-comment">// in that Safari&apos;s new additional print confirmation dialog</span>
+          <span class="hljs-built_in">window</span>.frames[frame.name].focus();
+          <span class="hljs-built_in">window</span>.frames[frame.name].onfocus = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">return</span> mediaQueryCallback(mediaQueryList);
+          };
+        }
+
+        frame.onload = () =&gt; {
+          <span class="hljs-built_in">window</span>.frames[frame.name].print();
+        }
+
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+      },
+
+      appendFrame() {
+        <span class="hljs-keyword">let</span> contents = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-keyword">this</span>.$refs.printEle.id).outerHTML;
+        <span class="hljs-keyword">let</span> str = <span class="hljs-string">&apos;&apos;</span>;
+
+        <span class="hljs-keyword">let</span> links = <span class="hljs-built_in">document</span>.head.querySelectorAll(<span class="hljs-string">&apos;link&apos;</span>);
+        <span class="hljs-built_in">Array</span>.from(links).forEach(item =&gt; {
+          str += item.outerHTML;
+        });
+
+        <span class="hljs-keyword">let</span> styles = <span class="hljs-built_in">document</span>.head.querySelectorAll(<span class="hljs-string">&apos;style&apos;</span>);
+        <span class="hljs-built_in">Array</span>.from(styles).forEach(item =&gt; {
+          str += item.outerHTML;
+        });
+
+
+        <span class="hljs-keyword">let</span> frame1 = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;iframe&apos;</span>);
+        frame1.name = <span class="hljs-string">&quot;frame3&quot;</span>;
+        frame1.style.position = <span class="hljs-string">&quot;absolute&quot;</span>;
+        frame1.style.top = <span class="hljs-string">&quot;-1000000px&quot;</span>;
+        <span class="hljs-built_in">document</span>.body.appendChild(frame1);
+
+        <span class="hljs-keyword">let</span> frameDoc = frame1.contentWindow ? frame1.contentWindow : frame1.contentDocument.document ? frame1.contentDocument.document : frame1.contentDocument;
+        frameDoc.document.open();
+        frameDoc.document.write(<span class="hljs-string">`&lt;html&gt;&lt;head&gt;&lt;title&gt;&#x4EBA;&#x793E;&#x90E8;&#x5927;&#x5B66;&lt;/title&gt;<span class="hljs-subst">${str}</span>&lt;/head&gt;`</span>);
+        frameDoc.document.write(<span class="hljs-string">&apos;&lt;body&gt;&apos;</span>);
+        frameDoc.document.write(contents);
+        frameDoc.document.write(<span class="hljs-string">&apos;&lt;/body&gt;&lt;/html&gt;&apos;</span>);
+        frameDoc.document.close();
+
+        <span class="hljs-keyword">return</span> frame1;
+      },
 </code></pre>
 
                                 
@@ -899,10 +967,14 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev navigation-unique" aria-label="Previous page: regexp">
+                <a href="eventSource.html" class="navigation navigation-prev " aria-label="Previous page: EventSource">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="../css/" class="navigation navigation-next " aria-label="Next page: CSS">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -911,7 +983,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"01","level":"5.1.1","depth":2,"previous":{"title":"regexp","level":"5.1","depth":1,"path":"regexp/README.md","ref":"regexp/README.md","articles":[{"title":"01","level":"5.1.1","depth":2,"path":"regexp/01.md","ref":"regexp/01.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["multipart","copy-code-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"multipart":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ys","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"一波流","gitbook":"*"},"file":{"path":"regexp/01.md","mtime":"2019-09-20T02:41:15.332Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-23T02:34:33.009Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"打印","level":"1.6.8","depth":2,"next":{"title":"CSS","level":"2.1","depth":1,"path":"css/README.md","ref":"css/README.md","articles":[{"title":"特性","level":"2.1.1","depth":2,"path":"css/css-01.md","ref":"css/css-01.md","articles":[]}]},"previous":{"title":"EventSource","level":"1.6.7","depth":2,"path":"base/eventSource.md","ref":"base/eventSource.md","articles":[]},"dir":"ltr"},"config":{"plugins":["multipart","copy-code-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"multipart":{},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ys","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"一波流","gitbook":"*"},"file":{"path":"base/print.md","mtime":"2020-03-23T02:34:08.083Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-23T02:34:33.009Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
